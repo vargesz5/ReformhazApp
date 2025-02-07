@@ -1,3 +1,4 @@
+/*All element*/
 body{
 	margin: 0;
 	padding: 0;
@@ -6,29 +7,25 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #8db600, #eeffb6 );
+	background: #8cb6008d;
 }
 .main{
 	width: 350px;
-	height: 500px;
+	height: 700px;
 	overflow: hidden;
 	border-radius: 10px;
-	box-shadow: 5px 20px 50px #686868;
+	box-shadow: 5px 20px 50px #686868;	
+	background:  #ffffff ;
 }
 #chk{
 	display: none;
 }
-.signup{
-	position: relative;
-	width:100%;
-	height: 100%;
-}
 label{
-	color: #fff;
+	color: #8db600;
 	font-size: 2.3em;
 	justify-content: center;
 	display: flex;
-	margin: 50px;
+	margin: 20px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: .5s ease-in-out;
@@ -50,8 +47,8 @@ button{
 	margin: 10px auto;
 	justify-content: center;
 	display: block;
-	color: #8db600;
-	background: #eeffb6;
+	color: white;
+	background: #8db600;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 30px;
@@ -61,40 +58,10 @@ button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
-button:hover{
-	background: #8db600;
+button:hover , .login button:hover{
+	background: #6c6c6c;
     color: white;
 }
-.login{
-	height: 460px;
-	background: #eee;
-	border-radius: 60% / 10%;
-	transform: translateY(-180px);
-	transition: .8s ease-in-out;
-}
-.login label{
-	color: #8db600;
-	transform: scale(.6);
-}
-
-#chk:checked ~ .login{
-	transform: translateY(-500px);
-}
-#chk:checked ~ .login label{
-	transform: scale(1);	
-}
-#chk:checked ~ .signup label{
-	transform: scale(.6);
-}
-
-.login__icon {
-	color: #8db600;
-}
-.signup__icon
-{
-    color: white;
-}
-
 .input-container {
     position: relative;
     width: 80%;
@@ -107,3 +74,86 @@ button:hover{
     left: 10px;
     transform: translateY(-50%);    
 }
+
+img {
+    height: auto; 
+    max-width: 200px; 
+	margin-top: 10px;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+/*-----*/
+
+/*Sign Up*/
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+.signup__icon
+{
+    color: #8db600;
+}
+.social-signup {	
+	position: absolute;
+	height: 140px;
+	width: 160px;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: 90px;
+	margin-right: 90px;
+	color: #8db600;
+}
+
+.social-icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-signup__icon {
+	padding: 20px 10px;	
+	color: #8db600;
+	text-decoration: none;	
+}
+.social-signup__icon:hover {
+	transform: scale(1.5);	
+}
+/*-----*/
+
+/*Login*/
+.login{
+	height: 460px;
+	background: #8db600;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.login label{
+	color: white;
+	transform: scale(.6);
+	margin: 70px;
+}
+.login button{
+	background-color: white;
+	color: #8db600;
+}
+.login__icon {
+	color: white;
+}
+/*-----*/
+
+/*CheckBox*/
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}
+/*-----*/
+
+/*Size by Phone*/
