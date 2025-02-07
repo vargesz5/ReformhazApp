@@ -1,0 +1,29 @@
+#aszfDiv
+{
+	font-size: 13px;
+	font-family: 'Open Sans', sans-serif;
+	color: #888888;
+	background-color: white;
+	padding: 20px;
+}
+#aktDiv
+{
+    font-size: 13px;
+	font-family: 'Open Sans', sans-serif;
+	color: #888888;
+	background-color: white;
+	padding: 20px;
+}
+
+#aszfButton
+{
+    border: none;
+    color: #8db600;
+    padding: 20px;
+}
+#aktButton
+{
+    color: #8db600;
+    border: none;
+    padding: 20px;
+}

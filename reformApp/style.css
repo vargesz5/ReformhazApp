@@ -7,7 +7,7 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: #8cb6008d;
+	background: #8cb60085;
 }
 .main{
 	width: 350px;
@@ -16,6 +16,15 @@ body{
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #686868;	
 	background:  #ffffff ;
+}
+#adatLinks
+{
+	font-size: 10px;
+}
+a
+{
+	text-decoration: none;
+	color: rgb(226, 210, 210);
 }
 #chk{
 	display: none;
@@ -48,7 +57,7 @@ button{
 	justify-content: center;
 	display: block;
 	color: white;
-	background: #8db600;
+	background: #6c6c6c;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 30px;
@@ -58,8 +67,9 @@ button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
-button:hover , .login button:hover{
-	background: #6c6c6c;
+button:hover
+{
+	background: #8db600;
     color: white;
 }
 .input-container {
@@ -85,22 +95,22 @@ img {
 }
 /*-----*/
 
-/*Sign Up*/
-.signup{
+/*Login*/
+.login{
 	position: relative;
 	width:100%;
 	height: 100%;
 }
-.signup__icon
+.login__icon
 {
     color: #8db600;
 }
-.social-signup {	
+.social-login {	
 	position: absolute;
 	height: 140px;
 	width: 160px;
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 50px;
 	margin-left: 90px;
 	margin-right: 90px;
 	color: #8db600;
@@ -112,46 +122,50 @@ img {
 	justify-content: center;
 }
 
-.social-signup__icon {
+.social-login__icon {
 	padding: 20px 10px;	
 	color: #8db600;
 	text-decoration: none;	
 }
-.social-signup__icon:hover {
+.social-login__icon:hover {
 	transform: scale(1.5);	
 }
 /*-----*/
 
-/*Login*/
-.login{
+/*Sign Up*/
+.signup{
 	height: 460px;
 	background: #8db600;
 	border-radius: 60% / 10%;
 	transform: translateY(-180px);
 	transition: .8s ease-in-out;
 }
-.login label{
+.signup label{
 	color: white;
 	transform: scale(.6);
 	margin: 70px;
 }
-.login button{
+.signup button{
+	background-color: #6c6c6c;
+	color: white;
+}
+.signup button:hover{
 	background-color: white;
 	color: #8db600;
 }
-.login__icon {
+.signup__icon {
 	color: white;
 }
 /*-----*/
 
 /*CheckBox*/
-#chk:checked ~ .login{
+#chk:checked ~ .signup{
 	transform: translateY(-500px);
 }
-#chk:checked ~ .login label{
+#chk:checked ~ .signup label{
 	transform: scale(1);	
 }
-#chk:checked ~ .signup label{
+#chk:checked ~ .login label{
 	transform: scale(.6);
 }
 /*-----*/
