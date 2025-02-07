@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title>Reformház</title>
-	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
+    <link rel="stylesheet" type="text/css" href="slide navbar style.css">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div class="main">  	
@@ -16,7 +16,7 @@
 					<label for="chk" aria-hidden="true">Bejelentkezés</label>
 					<div class="input-container">
                         <i class="fa fa-envelope login__icon"></i>
-                        <input type="email" name="email" id="LiEmail" placeholder="Email" required="">
+                        <input type="email" name="email" id="LiEmail" placeholder="Email" required>
                     </div>
                     <div class="input-container">
                         <i class="fa fa-lock login__icon"></i>
@@ -52,36 +52,14 @@
                         <input type="password" name="pswd" id="SuPassword" placeholder="Jelszó" required="">
                     </div>
                     <span id="adatLinks">
-                        <input type="checkbox" name="" id="AdatCheck" required="">Hozzájárulok az adataim kezeléséhez és elfogadom az Adatkezelési tájékoztatót.
+                        <input type="checkbox" name="" id="AdatCheck" required="">
+                        Hozzájárulok az adataim kezeléséhez és elfogadom az
+                        <a href="https://www.reformhaz.hu/shop_help.php?tab=privacy_policy" target="_blank">Adatkezelési tájékoztatót.</a>
                     </span>
 					<button id="SuButton">Regisztrálás</button>
 				</form>
 			</div>
 	</div>
-    <script>
-        document.getElementById('chk').addEventListener('change', function() {
-            let isChecked = this.checked;
-            let LoginEmail = document.getElementById('LiEmail');
-            let LoginPassword = document.getElementById('LiPassword');
-            let LoginButton =  document.getElementById('LiButton');
-            LoginEmail.disabled = isChecked;
-            LoginPassword.disabled = isChecked;
-            LoginButton.disabled = isChecked;
-            LoginEmail.value="";
-            LoginPassword.value="";
-
-            let SignupName = document.getElementById('SuName');
-            let SignupEmail = document.getElementById('SuEmail');
-            let SignupPassword = document.getElementById('SuPassword');
-            let SignupButton = document.getElementById('SuButton');
-            SignupName.disabled = !isChecked;
-            SignupEmail.disabled = !isChecked;
-            SignupPassword.disabled = !isChecked;
-            SignupButton.disabled = !isChecked;
-            SignupName.value="";
-            SignupEmail.value="";
-            SignupPassword.value="";
-        });
-    </script>
+    <script src="src/main.js"></script>
 </body>
 </html>
