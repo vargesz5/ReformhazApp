@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<div class="input-container">
+                        <i class="fa fa-user signup__icon"></i>
+                        <input type="text" name="txt" id="SuName" placeholder="Full Name" required="">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-envelope signup__icon"></i>
+                        <input type="email" name="email" id="SuEmail" placeholder="Email" required="">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-lock signup__icon"></i>
+                        <input type="password" name="pswd" id="SuPassword" placeholder="Password" required="">
+                    </div>
+					<button id="SuButton">Sign up</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+                    <div class="input-container">
+                        <i class="fa fa-envelope login__icon"></i>
+                        <input type="email" name="email" id="LiEmail" placeholder="Email" required="">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-lock login__icon"></i>
+                        <input type="password" name="pswd" id="LiPassword" placeholder="Password" required="">
+                    </div>
+					<button id="LiButton">Login</button>
+				</form>
+			</div>
+	</div>
+</body>
+</html>
