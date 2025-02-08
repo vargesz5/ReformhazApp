@@ -21,3 +21,17 @@ document.getElementById('chk').addEventListener('change', function() {
     SignupEmail.value="";
     SignupPassword.value="";
 });
+
+/*Sign Up Kezelése */
+document.getElementById("SuButton").addEventListener("click",SignUpSaveData)
+function SignUpSaveData()
+{
+
+}
+
+/*Login Kezelése*/
+document.getElementById("LiButton").addEventListener("click",LoginToApp)
+function LoginToApp()
+{
+    
+}

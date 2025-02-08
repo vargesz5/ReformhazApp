@@ -1,0 +1,39 @@
+.policiesDiv
+{
+    width: 50%;
+    padding: 20px;
+    font-size: 13px;
+    color: #888888;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+}
+#policiesTitle
+{
+    display: flex;
+    justify-content: center; 
+    gap: 30px;
+    color: #888888;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+#aszfTitle:hover
+{
+    color: #8db600;
+    text-decoration: underline;
+}
+#aktTitle:hover
+{
+    color: #8db600;
+    text-decoration: underline;
+}
+#aszfTitle:focus
+{
+    color: #8db600 ;
+    text-decoration: underline;
+}
+#aktTitle:focus
+{
+    color: #8db600 ;
+    text-decoration: underline;
+}
