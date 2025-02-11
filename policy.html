@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/policy.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="Titles">
+        <div class="policiesTitle active" id="aszfTitle" tabindex="0" >
+            Általános szerződési feltételek
+        </div>
+        <div class="policiesTitle" id="aktTitle" tabindex="0">
+            Adatkezelési tájékoztató
+        </div>
+        <script>
+            document.getElementById("aszfTitle").addEventListener("click", function () {
+               document.getElementById("aktDiv").style.display = "none";
+                document.getElementById("aszfDiv").style.display = "block";
+            })
+            document.getElementById("aktTitle").addEventListener("click", function () {
+                document.getElementById("aszfDiv").style.display = "none";
+                document.getElementById("aktDiv").style.display = "block";
+            })
+        const items = document.querySelectorAll(".policiesTitle");
+        
+        items.forEach(item => {
+            item.addEventListener("click", function(){
+                items.forEach(el => {
+                    el.classList.remove("active");
+                })
+                item.classList.add("active");
+            })
+        })
+        </script>
+    </div>
+    <div class='policiesDiv' id="aszfDiv">
+        <p><span><strong>A termék kiválasztása</strong></span></p>
+        <div></div>
+        <p><span>A vásárlónak lehetősége van választani, illetve rendelni az áruház termékei közül. A vásárló a
+                kiválasztott termékre kattintva megtekintheti annak bővebb ismertetőjét. Vásárlási szándéka esetén a
+                megvásárolni kívánt terméket a <strong>„Kosárba” </strong>gomb megnyomásával egy virtuális kosárba
+                helyezi. A <strong>Kosár „Megtekintés” </strong>gombjára kattintva megtalálja a vásárlás során kosárba
+                helyezett termékeket, valamint a számla végösszegét és a szállítási költséget. Itt leellenőrizhetik
+                rendelésük helyességét, különös tekintettel az árakra és a mennyiségekre, melyeket igény szerint
+                módosíthatnak, javíthatnak is. A kosár automatikusan kiszámítja a rendelés
+                végösszegét.<strong></strong></span></p>
+        <div></div>
+        <p><span><strong>A rendelés elküldése</strong><br />Ha megfelelőnek tartja a kosárban elhelyezett termékek
+                mennyiségét, leellenőrizte a végösszeget, és úgy döntött, hogy meg szeretné vásárolni őket, akkor
+                egyszerűen kattintson a <strong>"Pénztár"</strong> gombra. Áruházunkban lehetősége van regisztráció
+                nélkül is a vásárlásra, ezért három lehetőség közöl választhat:</span></p>
+        <div></div>
+        <ul>
+            <li><span>már regisztrált vásárlóként szeretne-e belépni</span></li>
+            <li><span>új vásárlóként akar regisztrálni, ebben az esetben a regisztrációt jóvá kell hagynunk</span></li>
+        </ul>
+        <p><span>Ha korábban már vásárolt áruházunkban, úgy adja meg a korábbi regisztráció során megadott e-mail címét
+                és jelszavát. Ha új vásárlóként szeretne regisztrálni, akkor adja meg a vásárláshoz szükséges adatait,
+                amelyeket a rendszer eltárol, és a legközelebbi vásárlás alkalmával már csak be kell jelentkeznie.
+                <br />A következő lépésben válassza ki az Önnek megfelelő <strong>szállítási módot</strong>:</span></p>
+        <div></div>
+        <ul>
+            <li><span>ExpressOne Futárszolgálat </span></li>
+            <li><span>Túrajáratunk a hét egyeztetett napján </span></li>
+            <li><span>Személyes átvétel üzletünkben</span></li>
+        </ul>
+        <p><span>Ezt követően egy Önnek megfelelő <strong>fizetési módot</strong> kell választania:</span></p>
+        <div></div>
+        <ul>
+            <li><span><strong>banki átutalás</strong> - amennyiben erre szerződést kötöttünk</span></li>
+            <li><span><strong>utánvét</strong> - (készpénzes fizetés házhozszállítás esetén, a küldemény átvételekor a
+                    postásnak)</span></li>
+            <li><span><strong>készpénz</strong> - üzletünkben vagy túrajárat esetén a sofőrünknek</span></li>
+        </ul>
+        <p><span>Ha egyetért a megrendelés tartalmával, akkor a megrendelés elküldéséhez kattintson a
+                <strong>„Megrendelés”</strong> gombra.</span></p>
+        <div></div>
+        <p><span><strong>Árak</strong><br />Áraink a rendelés időpontjában érvényes listaárak, amelyeket a webáruházban
+                a termékek mellett találnak. Ezeket az árakat abban az esetben érvényesítjük, amennyiben a számla
+                végösszege eléri a minimum nettó 30.000 Ft-ot.</span><span></span></p>
+        <div></div>
+        <p><span>Az árak bruttó árak, az ÁFÁ-t tartalmazzák, azonban ezek az árak nem tartalmazzák a szállítási
+                költséget. A szállítási költség a pénztár folyamat során a megrendelés véglegesítése előtt, valamint a
+                Szállítási feltételek között is megtalálható. </span></p>
+        <div></div>
+        <p><span>A feltüntetett árak nem minősülnek közvetlen árajánlattételnek. Az esetleges elírásokból eredő károkért
+                Szolgáltató nem vállal felelősséget. Amennyiben a webáruházban hiba vagy hiányosság lép fel a
+                termékeknél vagy az áraknál, fenntartjuk a jogot a korrekcióra. Ilyen esetben a hiba felismerése illetve
+                módosítása után azonnal tájékoztatjuk a vevőt az új adatokról. A vevő ezt követően még egyszer
+                megerősítheti a megrendelést, vagy lehetőség van arra, hogy bármely fél elálljon a
+                szerződéstől.<br /><br /><strong>A rendelések feldolgozása</strong><br />A rendelések feldolgozása 24
+                órán belül megtörténik.<br /><br /><strong>Adatbeviteli hibák javításának lehetősége</strong><br />Az
+                adatbeviteli hibák javítására a „Megrendelés” gomb megnyomása előtt van
+                lehetősége.<br /><br /><strong>Visszaigazolás</strong><br />Minden rendelésről e-mailes visszajelzést
+                küldünk. Ez azt jelenti, hogy a rendelés feladását követően egy automatikus e-mailt kap a rendelés
+                beérkezéséről. Ha kéri, összeszedés után az elkészült számlát is elküldjük e-mail-ben. Telefonos
+                egyeztetés esetén hívja az ügyfélszolgálatot vagy az e-mailben található telefonszámok
+                bármelyikét.<br /><br /><strong>Fizetési feltételek</strong><br />Áruházunkban lehetőség van banki
+                átutalásra, személyes és utánvéttel történő fizetésre. Utóbbi esetén a teljes vételárat szállítási
+                költséggel együtt a küldemény átvételekor kell kifizetni készpénzben a küldemény kézbesítőjének.</span>
+        </p>
+        <div></div>
+        <p><span><strong>Szállítás</strong><br />A küldemények kézbesítése, szállítása túrajárattal vagy
+                futárszolgálattal történik. A termék szállítási idejét a szerződésünk tartalmazza. A szállítás
+                időpontjáról lehetősége van egyeztetni a visszaigazoló e-mailben található telefonszámon.</span></p>
+        <div></div>
+        <p><span><strong>Szállítási díjak:</strong><br />Szállítási díjaink a kiszállítási helytől, a kiszállítási
+                módtól, a csomagok súlyától és értékétől függ.</span></p>
+        <div></div>
+        <p><span><strong>A szállítástól elállás</strong><br />Ha a webáruház a szerződésben vállalt kötelezettségét
+                azért nem teljesíti, mert a szerződésben meghatározott áru nem áll rendelkezésére, illetve a megrendelt
+                szolgáltatást nem áll módjában nyújtani, köteles erről a megrendelőt tájékoztatni. A webáruház nem köt
+                szerződést kiskorúakkal. A megrendelő a kereskedelmi feltételek elfogadásával nyilatkozik arról, hogy
+                nagykorú.<br /><br /><strong>A termék visszaküldése</strong><br />A terméket csak eredeti állapotában és
+                csomagolásában, hiánytalan mennyiségi, minőségi állapotában vesszük vissza, a termék nem lehet
+                beárazva.<br /><br /><strong>Szerződéskötés feltételeire vonatkozó tájékoztatás</strong><br />A
+                szerződéskötés nyelve magyar, a megkötött szerződés írásban megkötöttnek minősül. A megkötött szerződést
+                iktatják, utólag hozzáférhető lesz.<br /><br /><strong>Elállási jog/ Visszaszolgáltatási
+                    garancia</strong><br />Nincs. Kizárólag viszonteladó cégeket szolgálunk ki, akik nem minősülnek
+                fogyasztónak. Minőségi kifogással 24 órán belül lehet megkeresni bennünket.</span></p>
+        <div></div>
+        <p><span><strong>Tulajdonjogi kikötés</strong><br />A leszállított áru a vételár teljes kifizetéséig a szállító
+                tulajdonában marad.<br /><br /><strong>Megrendelés módosítása, törlése</strong><br />A 2001. évi CVIII.
+                törvény értelmében a megrendelés leadásakor a vásárló felé azonnal értesítést küld az eladó webáruház
+                szoftvere a rendelés felvételének tényéről. Ez az értesítés nem minősül az eladó és a vásárló között
+                létrejött szerződésnek! Csupán jelzi a vásárlónak, hogy rendelési igényét rendszerünk regisztrálta és
+                továbbította az eladó illetékes munkatársa felé.<br /><br />Amennyiben a vásárlóhoz ez 48 órán belül nem
+                érkezik meg, akkor a vásárló ajánlattételi kötöttségei megszűnnek.<br />Az eladó a rendelés
+                teljesítésének megkezdéséig megadja a lehetőséget a vásárlónak rendelése visszavonására elektronikus
+                úton. A rendelés teljesítésének megkezdésekor a vásárló e-mailben és/vagy telefonon értesítést kap a
+                teljesítés várható időtartamáról, és a teljesítés megkezdésének tényéről, ezután már csak személyesen
+                vagy a "Vevőszolgálat" vagy "Elérhetőségek" menüpontok alatt található elérhetőségek valamelyikén
+                keresztül van lehetőség rendelésének visszavonására<br /><br />A megrendelés utólagos módosítására csak
+                írásos formában, e-mailben kerülhet sor.</span></p>
+        <div></div>
+    </div>
+    <div class='policiesDiv' id="aktDiv" style="display: none;">
+        <p>A <b>Varga Reformház Kft</b> mint Adatkezelő a www.reformhaz.hu domain név alatt elérhető weboldal (a
+            továbbiakban: <b>Weboldal</b>) üzemeltetőjeként ezúton teszi közzé a Weboldal, a Weboldalhoz kapcsolódó
+            szolgáltatások keretében végzett adatkezelésre vonatkozó tájékoztatást.</p>
+        <div></div>
+        <p>A Weboldal használatának megkezdésével, valamint az Adatkezelő szolgáltatásainak igénybe vételével a
+            Weboldalra látogató, valamint a Varga Reformház Kft. szolgáltatásait igénybevevő felhasználók (a
+            továbbiakban: <b>Érintettek</b>) elfogadják a jelen Adatkezelési tájékoztatóban (a továbbiakban:
+            <b>Tájékoztató</b>) foglalt valamennyi feltételt, ezért kérjük, hogy a Weboldal használata, illetve a
+            szolgáltatások igénybevétele előtt figyelmesen olvassa végig a jelen Tájékoztatót.</p>
+        <div></div>
+        <p>Jelen szabályzat értelmezése tekintetében az Érintett: bármely meghatározott, személyes adat alapján
+            azonosított vagy – közvetlenül vagy közvetve – azonosítható természetes személy, akinek adatait a Varga
+            Reformház Kft kezeli.</p>
+        <div></div>
+        <p>&nbsp;</p>
+        <div></div>
+        <p><b>1. Az Adatkezelő adatai</b></p>
+        <div></div>
+        <table style="font-weight: 400;">
+            <tr>
+                <td>Adatkezelő neve:</td>
+                <td>Varga Reformház Kft.</td>
+            </tr>
+            <tr>
+                <td>Székhelye:</td>
+                <td>4030 Debrecen, Epreskert utca 88.</td>
+            </tr>
+            <tr>
+                <td>Képviseli:</td>
+                <td>Varga László ügyvezető</td>
+            </tr>
+            <tr>
+                <td>Cégjegyzékszáma:</td>
+                <td>09-09-000595</td>
+            </tr>
+            <tr>
+                <td>Adószáma:</td>
+                <td>10510854-2-09</td>
+            </tr>
+            <tr>
+                <td>E-mail címe:</td>
+                <td>info@reformhaz.hu</td>
+            </tr>
+            <tr>
+                <td>Telefonszáma:</td>
+                <td>+36 52 451-566</td>
+            </tr>
+        </table>
+        <p>A Varga Reformház Kft Adatkezelő vállalja, hogy adatkezelési tevékenységét - a megfelelő belső szabályok,
+            technikai és szervezési intézkedések meghozatalával – úgy végzi, hogy az megfeleljen az Európai Parlament és
+            a Tanács (EU) 2016/679 rendeletének - a természetes személyeknek a személyes adatok kezelése tekintetében
+            történő védelméről és az ilyen adatok szabad áramlásáról, valamint a 95/46/EK rendelet hatályon kívül
+            helyezéséről (általános adatvédelmi rendelet, a továbbiakban: Rendelet) – továbbá az információs
+            önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII. törvény (a továbbiakban: Infotv.)
+            rendelkezéseinek.</p>
+        <div></div>
+        <p>&nbsp;</p>
+        <div></div>
+        <p><b>2. A kezelt személyes adatok köre</b></p>
+        <div></div>
+        <p><b>Regisztráció</b></p>
+        <div></div>
+        <p>A <b>Varga Reformház Kft </b>által nyújtott szolgáltatások az általa alkalmazott „Regisztráció” elnevezésű
+            on-line regisztrációs űrlap (a továbbiakban: <b>Űrlap</b>) megfelelő kitöltésével vehetők igénybe, vagy
+            személyes regisztrációval a telephelyönkön.</p>
+        <div></div>
+        <p>Az Űrlap kitöltése során az Érintett alábbi adatai kerülnek rögzítésre: név (vezetéknév, keresztnév,
+            születési név), telefonszám, e-mail cím, szállítási cím, számlázási cím. Jogi személy esetén: név, székhely,
+            adószám, cégjegyzékszám, bankszámlaszám, telefonszám, szállítás cím, e-mail cím.</p>
+        <div></div>
+        <p>A Varga Reformház Kft a részére megadott személyes adatokat nem ellenőrzi, a megadott adatok
+            valóságtartalmáért kizárólag az azt megadó Érintett felel.</p>
+        <div></div>
+        <p>Az Varga Reformház Kft az Érintett rögzített adatait zártan tárolja és azokat kizárólag a szolgáltatás
+            nyújtása érdekében, a jelen szabályzatban foglaltak szerinti módon és ideig kezeli. </p>
+        <div></div>
+        <p><b><strong>Hírlevél feliratkozás</strong></b></p>
+        <div></div>
+        <p><i>A Weboldalon az Érintettnek lehetősége van külön erre rendszeresített felületen is az Adatkezelő
+                hírlevelére feliratkozni. A hírlevélre történő feliratkozáshoz a következő személyes adatok megadása
+                szükséges:</i><br />- teljes név; <br />- e-mail cím.</p>
+        <div></div>
+        <p><b><strong></strong></b></p>
+        <div></div>
+        <p><b><strong>3. A</strong>z adatkezelés jogalapja</b></p>
+        <div></div>
+        <p>A Regisztráció során Érintett hozzájárul, hogy Adatkezelő a személyes adatait a jelen Tájékoztatóban írtak
+            szerint kezelje. A személyes adatok kezelése az Érintett jelen tájékoztatás ismeretében adott önkéntes
+            hozzájárulásán alapul.</p>
+        <div></div>
+        <p><b><strong></strong></b></p>
+        <div></div>
+        <p><b><strong>4. Az adatkezelés célja</strong></b></p>
+        <div></div>
+        <p>Az adatkezelés célja a regisztrált felhasználók azonosítása és az igénybevett szolgáltatás teljesítése a
+            Társaság által, ahhoz szükséges kapcsolatfelvétel, a regisztrált felhasználó és a Társaság között megkötésre
+            került szerződésből eredő jogok gyakorlása és kötelezettségek teljesítése, regisztrált felhasználók részére
+            hírlevél küldése.</p>
+        <div></div>
+        <p>A gazdasági reklámtevékenység alapvető feltételeiről és egyes korlátairól szóló 2008. évi XLVIII. törvényben
+            foglaltak szerint a Varga Reformház Kft az Érintett regisztráció során megadott e-mail címére hírlevelet
+            kizárólag az Érintett kifejezett hozzájárulásával küldhet. Az Érintett hozzájáruló nyilatkozata bármikor
+            korlátozás és indokolás nélkül, ingyenesen visszavonható. Az Érintett reklámküldemény természetes személy,
+            mint a reklám címzettje részére közvetlen üzletszerzés útján a címzett előzetes és kifejezett
+            hozzájárulásának hiányában is küldhető, ebben az esetben a Varga Reformház Kft biztosítja, hogy a reklám
+            címzettje a reklám küldését bármikor ingyenesen és korlátozás nélkül megtilthassa. Megtiltás esetén az
+            érintett személy részére reklám közvetlen üzletszerzés útján a továbbiakban nem küldhető.</p>
+        <div></div>
+        <p><b><strong></strong></b></p>
+        <div></div>
+        <p><b><strong>5. A</strong> személyes adatok megismerése, adatfeldolgozás, adattovábbítás</b></p>
+        <div></div>
+        <p>A Varga Reformház Kft a megjelölt céloktól eltérő célra a személyes adatokat nem használhatja. A 4. pont
+            szerint meghatározott cél érdekében kizárólag az Varga Reformház Kft mindenkori alkalmazásában álló
+            személyek ismerhetik meg az Érintett személyes adatait, azokat harmadik személynek – a jelen pontban foglalt
+            kivétellel – nem adhatják tovább. A szolgáltatások nyújtása, az Érintettel történő elszámolás körében a
+            Varga Reformház Kft adatfeldolgozót (pl. könyvelő, bérszámfejtő) vehet igénybe.</p>
+        <div></div>
+        <p><b><strong></strong></b></p>
+        <div></div>
+        <p><b><strong>6. A</strong>z adatkezelés időtartama</b></p>
+        <div></div>
+        <p>A Varga Reformház Kft a személyes adatokat az adatkezelés céljának fennállása alatt, így a regisztráció,
+            valamint a Hírlevél küldése esetén addig kezeli, amíg az Érintett nem kéri az adatai törlését, illetve nem
+            vonja vissza személyes adatai kezeléséhez, illetve a Hírlevelek fogadásához adott hozzájárulását.</p>
+        <div></div>
+        <p><b><strong></strong></b></p>
+        <div></div>
+        <p><b><strong>7. A</strong> személyes adatok megismerésére jogosultak köre, adatfeldolgozás</b></p>
+        <div></div>
+        <p>A regisztráció során megadott személyes adatokat az Adatkezelő a felhasználó előzetes hozzájárulása nélkül
+            harmadik félnek – kivéve az adatkezelés céljának megvalósítása érdekében szükséges mértékben szállító vagy
+            futár alvállalkozó részére - semmilyen módon nem adja tovább azon esetek kivételével, amikor az adatok
+            továbbítására a Társaság jogszabályi előírásnál fogva köteles. A szolgáltatás teljesítése érdekébe az
+            Adatkezelő a regisztrált felhasználónak a következő adatait bocsátja esetlegesen a szállító vagy futár
+            alvállalkozó rendelkezésére: név, szállítási cím, telefonos elérhetőség (amennyiben ez a kiszállításhoz
+            szükséges).</p>
+        <div></div>
+        <p>Adatkezelő fenntartja a jogot, hogy a jövőben adatfeldolgozót vonjon be az adatkezelésbe, amelyről a jelen
+            Tájékoztató módosításával tájékoztatja az Érintettet.</p>
+        <div></div>
+        <p><b><strong></strong></b></p>
+        <div></div>
+        <p><b><strong>8. A</strong> Varga Reformház Kft általi adatkezelés és adatbiztonság alapelvei</b></p>
+        <div></div>
+        <p>A Varga Reformház Kft számítástechnikai rendszerei és más adatmegőrzési helye a székhelyén található
+            szerverében található meg. A Varga Reformház Kft informatikai eszközeinek kiválasztásakor, beszerzésekor és
+            üzemeltetésekor figyelembe veszi, biztosítja, hogy a kezelt személyes adat csak a feljogosítottak számára
+            legyen hozzáférhető, eredete igazolható, hiteles legyen. A műszaki, informatikai, szervezési és szervezeten
+            belüli intézkedésekkel gondoskodik az adatkezelés biztonságának megőrzéséről, az adatkezeléssel kapcsolatos
+            kockázatok megfelelő védelmi szintjéről. Az informatikai rendszer és hálózat egyaránt védett a számítógéppel
+            támogatott csalás, kémkedés, szabotázs, vandalizmus, továbbá a számítógépvírusok, a számítógépes betörések
+            és a szolgálatmegtagadásra vezető támadások ellen. A Varga Reformház Kft tájékoztatja az Érintetteteket,
+            hogy az interneten továbbított elektronikus üzenetek, protokolltól (e-mail, web, ftp, stb.) függetlenül
+            sérülékenyek az olyan hálózati fenyegetésekkel szemben, amelyek tisztességtelen tevékenységre, szerződés
+            vitatására, vagy az információ felfedésére, módosítására vezetnek. Az ilyen fenyegetésektől megvédendő
+            megtesz minden tőle elvárható óvintézkedést. A rendszereket megfigyeli annak érdekében, hogy minden
+            biztonsági eltérést rögzíthessen, és bizonyítékkal szolgálhasson.</p>
+        <div></div>
+        <p>A Varga Reformház Kft megtesz minden tőle telhetőt annak érdekében, hogy az adatok véletlenül se sérüljenek,
+            illetve semmisüljenek meg. A fenti kötelezettségvállalást az adatkezelési tevékenységben részt vevő
+            munkavállalói részére előírja.</p>
+        <div></div>
+        <p>Az adatok biztonságát Adatkezelő a lehető legkorszerűbb módon biztosítja. Adatkezelő kötelezettséget vállal
+            arra, hogy a fentiekben foglalt intézkedések ellenére bekövetkező adatvédelmi incidensek esetén
+            haladéktalanul felfüggeszti a szolgáltatást és nyilatkozatot tesz közzé a hiba elhárításáig, továbbá
+            nyilvántartást vezet az adatvédelmi incidensekről és a megtett intézkedésekről.</p>
+        <div></div>
+        <p><b></b></p>
+        <div></div>
+        <p><b>9. Az Érintett jogai a kezelt adataival kapcsolatban</b></p>
+        <div></div>
+        <p><b>a. Előzetes tájékozódáshoz való jog</b></p>
+        <div></div>
+        <p>Az érintett jogosult arra, hogy az adatkezeléssel összefüggő tényekről és információkról az adatkezelés
+            megkezdését megelőzően tájékoztatást kapjon. (Rendelet 13-14. cikk)</p>
+        <div></div>
+        <p><b>b. Az érintett hozzáférési joga</b></p>
+        <div></div>
+        <p>Az érintett jogosult arra, hogy az Adatkezelőtől visszajelzést kapjon arra vonatkozóan, hogy személyes
+            adatainak kezelése folyamatban van-e, és ha ilyen adatkezelés folyamatban van, jogosult arra, hogy a
+            személyes adatokhoz és a Rendeletben meghatározott kapcsolódó információkhoz hozzáférést kapjon. (Rendelet
+            15. cikk).</p>
+        <div></div>
+        <p><b>c. A helyesbítéshez való jog</b></p>
+        <div></div>
+        <p>Az érintett jogosult arra, hogy kérésére az Adatkezelő indokolatlan késedelem nélkül helyesbítse a rá
+            vonatkozó pontatlan személyes adatokat. Figyelembe véve az adatkezelés célját, az érintett jogosult arra,
+            hogy kérje a hiányos személyes adatok – egyebek mellett kiegészítő nyilatkozat útján történő –
+            kiegészítését. (Rendelet 16. cikk).ó</p>
+        <div></div>
+        <p><b>d. A törléshez való jog („az elfeledtetéshez való jog”)</b></p>
+        <div></div>
+        <p>Az érintett jogosult arra, hogy kérésére az Adatkezelő indokolatlan késedelem nélkül törölje a rá vonatkozó
+            személyes adatokat, az Adatkezelő pedig köteles arra, hogy az érintettre vonatkozó személyes adatokat
+            indokolatlan késedelem nélkül törölje, ha a Rendeltben meghatározott indokok valamelyike fennáll. (Rendelet
+            17. cikk)</p>
+        <div></div>
+        <p><b>e. Adatkezelés korlátozásához való jog</b></p>
+        <div></div>
+        <p>Az érintett jogosult arra, hogy kérésére az Adatkezelő korlátozza az adatkezelést ha a rendeltben
+            meghatározott feltételek teljesülnek. (Rendelet 8. cikk)</p>
+        <div></div>
+        <p><b>f. A személyes adatok helyesbítéséhez vagy törléséhez, illetve az adatkezelés korlátozásához kapcsolódó
+                értesítési kötelezettség</b></p>
+        <div></div>
+        <p>Az Adatkezelő minden olyan címzettet tájékoztat valamennyi helyesbítésről, törlésről vagy
+            adatkezelés-korlátozásról, akivel, illetve amellyel a személyes adatot közölték, kivéve, ha ez lehetetlennek
+            bizonyul, vagy aránytalanul nagy erőfeszítést igényel. Az érintettet kérésére az Adatkezelő tájékoztatja e
+            címzettekről. (Rendelet 19. cikk)</p>
+        <div></div>
+        <p><b>g. Az adathordozhatósághoz való jog</b></p>
+        <div></div>
+        <p>A Rendeletben írt feltételekkel az érintett jogosult arra, hogy a rá vonatkozó, általa egy Adatkezelő
+            rendelkezésére bocsátott személyes adatokat tagolt, széles körben használt, géppel olvasható formátumban
+            megkapja, továbbá jogosult arra, hogy ezeket az adatokat egy másik Adatkezelőnek továbbítsa anélkül, hogy
+            ezt akadályozná az az Adatkezelő, amelynek a személyes adatokat a rendelkezésére bocsátotta. (Rendelet 20.
+            cikk)</p>
+        <div></div>
+        <p><b>h. A tiltakozáshoz való jog</b></p>
+        <div></div>
+        <p>Az érintett jogosult arra, hogy a saját helyzetével kapcsolatos okokból bármikor tiltakozzon személyes
+            adatainak a Rendelet 6. cikk (1) bekezdésének e) pontján (az adatkezelés közérdekű vagy az Adatkezelőre
+            ruházott közhatalmi jogosítvány gyakorlásának keretében végzett feladat végrehajtásához szükséges) vagy f)
+            pontján (az adatkezelés az Adatkezelő vagy egy harmadik fél jogos érdekeinek érvényesítéséhez szükség.
+            (Rendelet 21. cikk)</p>
+        <div></div>
+        <p><b>i. Automatizált döntéshozatal egyedi ügyekben, beleértve a profilalkotást</b></p>
+        <div></div>
+        <p>Az érintett jogosult arra, hogy ne terjedjen ki rá az olyan, kizárólag automatizált adatkezelésen – ideértve
+            a profilalkotást is – alapuló döntés hatálya, amely rá nézve joghatással járna vagy őt hasonlóképpen
+            jelentős mértékben érintené. (Rendelet 22. cikk)</p>
+        <div></div>
+        <p><b>j. Korlátozások</b></p>
+        <div></div>
+        <p>Az Adatkezelőre vagy adatfeldolgozóra alkalmazandó uniós vagy tagállami jog jogalkotási intézkedésekkel
+            korlátozhatja a 12–22. cikkben és a 34. cikkben foglalt, valamint a 12–22. cikkben meghatározott jogokkal és
+            kötelezettségekkel összhangban (Rendelet 23. cikk).</p>
+        <div></div>
+        <p><b>k. Az érintett tájékoztatása az adatvédelmi incidensről</b></p>
+        <div></div>
+        <p>Ha az adatvédelmi incidens valószínűsíthetően magas kockázattal jár a természetes személyek jogaira és
+            szabadságaira nézve, az Adatkezelő indokolatlan késedelem nélkül tájékoztatja az érintettet az adatvédelmi
+            incidensről. (Rendelet 34. cikk)</p>
+        <div></div>
+        <p><b>l. A felügyeleti hatóságnál történő panasztételhez való jog (hatósági jogorvoslathoz való jog)</b></p>
+        <div></div>
+        <p>Az érintett jogosult arra, hogy panaszt tegyen egy felügyeleti hatóságnál (Nemzeti Adatvédelmi és
+            Információszabadság Hatóság (NAIH) 1025 Budapest, Szilágyi Erzsébet fasor 22/c.), ha az érintett megítélése
+            szerint a rá vonatkozó személyes adatok kezelése megsérti a Rendeletet. (Rendelet 77. cikk)</p>
+        <div></div>
+        <p><b>m. A felügyeleti hatósággal szembeni hatékony bírósági jogorvoslathoz való jog</b></p>
+        <div></div>
+        <p>Minden természetes és jogi személy jogosult a hatékony bírósági jogorvoslatra a felügyeleti hatóság rá
+            vonatkozó, jogilag kötelező erejű döntésével szemben, vagy ha a felügyeleti hatóság nem foglalkozik a
+            panasszal, vagy három hónapon belül nem tájékoztatja az érintettet a benyújtott panasszal kapcsolatos
+            eljárási fejleményekről vagy annak eredményéről. (Rendelet 78. cikk)</p>
+        <div></div>
+        <p><b>n. Az adatkezelővel vagy az adatfeldolgozóval szembeni hatékony bírósági jogorvoslathoz való jog</b></p>
+        <div></div>
+        <p>Minden érintett hatékony bírósági jogorvoslatra jogosult, ha megítélése szerint a személyes adatainak e
+            rendeletnek nem megfelelő kezelése következtében megsértették az e rendelet szerinti jogait. (Rendelet 79.
+            cikk).</p>
+        <div></div>
+        <p>&nbsp;</p>
+        <div></div>
+        <p><b>10. Adatvédelmi incidensek kezelése és bejelentése</b></p>
+        <div></div>
+        <p>Adatvédelmi incidensek megelőzése, kezelése, a vonatkozó jogi előírások betartása a Varga Reformház Kft
+            ügyvezetőjének feladata. Az informatikai rendszereken naplózni kell a hozzáféréseket és hozzáférési
+            kísérleteket, és ezeket folyamatosan elemezni kell. Amennyiben az Adatkezelő ellenőrzésre jogosult
+            munkavállalói a feladataik ellátása során adatvédelmi incidenst észlelnek, haladéktalanul értesíteniük kell
+            az ügyvezetőt.</p>
+        <div></div>
+        <p>Az adatvédelmi incidens bejelenthető az Adatkezelő központi e-mail címén, amelyen a munkavállalók, szerződő
+            partnerek, érintettek jelenteni tudják az alapul szolgáló eseményeket.</p>
+        <div></div>
+        <p>Adatvédelmi incidens bejelentése esetén az Adatkezelő ügyvezetője– az adatok biztonságáért felelő dolgozó
+            bevonásával – haladéktalanul megvizsgálja a bejelentést, ennek során azonosítani kell az incidenst, el kell
+            dönteni, hogy valódi incidensről, vagy téves riasztásról van szó. Meg kell vizsgálni és meg kell állapítani:
+        </p>
+        <div></div>
+        <ol>
+            <li>az incidens bekövetkezésének időpontját és helyét,</li>
+            <li>az incidens leírását, körülményeit, hatásait,</li>
+            <li>az incidens során jogosulatlanul megismert adatok körét, számát,</li>
+            <li>az incidenssel érintett személyek körét,</li>
+            <li>az incidens elhárítása érdekében tett intézkedések leírását,</li>
+            <li>a kár megelőzése, elhárítása, csökkentése érdekében tett intézkedések leírását.</li>
+        </ol>
+        <p>Adatvédelmi incidens bekövetkezése esetén az érintett rendszereket, személyeket, adatokat be kell határolni
+            és el kell különíteni és gondoskodni kell az incidens bekövetkezését alátámasztó bizonyítékok begyűjtéséről
+            és megőrzéséről. Ezt követően lehet megkezdeni a károk helyreállítását és a jogszerű működés
+            visszaállítását. Az adatvédelmi jogszabályokban meghatározott feltételek esetén értesíteni kell a
+            Felügyeleti Hatóságot.</p>
+        <div></div>
+        <p>Az adatvédelmi incidens bekövetkezéséről, ha az az azzal érintett természetes személyek adatjogaira illetve
+            adatszabadságára nézve magas kockázattal jár az Adatkezelő tájékoztatja az érintetteket. A tájékoztatásnak
+            ebben az esetben is világosnak, egyértelműnek és közérthetőnek kell lennie.</p>
+        <div></div>
+        <p>Az Adatkezelő mellőzheti az érintettek tájékoztatását, ha:</p>
+        <div></div>
+        <ul>
+            <li>megfelelő technikai és szervezési intézkedésekkel lehetetlenné tette az adatvédelmi incidenssel érintett
+                adatok illetéktelen személyek számára való megismerhetőségét,</li>
+            <li>az adatvédelmi incidens bekövetkezése után olyan intézkedéseket tett, amelyek biztosítják, hogy az
+                érintettek jogaival és szabadságaival kapcsolatos magas kockázat nem valósul meg</li>
+            <li>a tájékoztatás csak aránytalan erőfeszítések révén lenne megoldható, ebben az esetben olyan intézkedést
+                kell tenni, ami biztosítja az érintettek hatékony tájékoztatását.</li>
+        </ul>
+        <p>Az adatvédelmi incidensek nyilvántartását az erre kijelölt személy elektronikus formában vezeti. A
+            nyilvántartás – a Munkavállaló, Tag nevének kivételével – nem a konkrét személyes adatokat, hanem a
+            személyes adatok körét tartalmazza.</p>
+        <div></div>
+        <p>Az adatvédelmi incidensekről nyilvántartást kell vezetni, amely tartalmazza:</p>
+        <div></div>
+        <ol>
+            <li>az érintett személyes adatok körét,</li>
+            <li>az adatvédelmi incidenssel érintettek körét és számát,</li>
+            <li>az adatvédelmi incidens időpontját,</li>
+            <li>az adatvédelmi incidens körülményeit, hatásait,</li>
+            <li>az adatvédelmi incidens orvoslására megtett intézkedéseket,</li>
+            <li>az adatkezelést előíró jogszabályban meghatározott egyéb adatokat.</li>
+        </ol>
+        <p>A nyilvántartásban szereplő adatvédelmi incidensekre vonatkozó adatokat 5 évig meg kell őrizni.</p>
+        <div></div>
+        <p>&nbsp;</p>
+        <div></div>
+        <p><b><strong>11. J</strong>ogorvoslati lehetőségek</b></p>
+        <div></div>
+        <p>A Varga Reformház Kft , mint adatkezelő késedelem nélkül, de legkésőbb a kérelem beérkezésétől számított egy
+            hónapon belül tájékoztatja az érintettet a jogai gyakorlására irányuló kérelme nyomán hozott
+            intézkedésekről. Szükség esetén, figyelembe véve a kérelem összetettségét és a kérelmek számát, ez a
+            határidő további két hónappal meghosszabbítható. A határidő meghosszabbításáról az Adatkezelő a késedelem
+            okainak megjelölésével a kérelem kézhezvételétől számított egy hónapon belül írásban (ideértve az e-mailt
+            is, ha a kérelem e-mailen érkezett) tájékoztatja az érintettet.</p>
+        <div></div>
+        <p>Ha a Varga Reformház Kft nem tesz intézkedéseket az érintett kérelme nyomán, késedelem nélkül, de legkésőbb a
+            kérelem beérkezésétől számított harminc napon belül tájékoztatja az érintettet az intézkedés elmaradásának
+            okairól, valamint arról, hogy az érintett panaszt nyújthat be a felügyeleti hatóságnál (NAIH), és élhet
+            bírósági jogorvoslati jogával. A Varga Reformház Kft a tájékoztatáshoz való jog alapján igényelt
+            információkat és az egyes jogok gyakorlásával összefüggő tájékoztatást és intézkedést alapesetben
+            díjmentesen biztosítja. Ha azonban az érintett kérelme egyértelműen megalapozatlan vagy – különösen
+            ismétlődő jellege miatt – túlzó, a Varga Reformház Kft figyelemmel a kért információ vagy tájékoztatás
+            nyújtásával vagy a kért intézkedés meghozatalával járó adminisztratív költségekre:</p>
+        <div></div>
+        <table>
+            <tr>
+                <td>
+                    <p>a,</p>
+                    <div></div>
+                </td>
+                <td>
+                    <p>ésszerű összegű díjat számíthat fel, vagy</p>
+                    <div></div>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <p>b,</p>
+                    <div></div>
+                </td>
+                <td>
+                    <p>megtagadhatja a kérelem alapján történő intézkedést.</p>
+                    <div></div>
+                </td>
+            </tr>
+        </table>
+        <p>A kérelem egyértelműen megalapozatlan vagy túlzó jellegének bizonyítása a Varga Reformház Kft-t terheli.</p>
+        <div></div>
+        <p>A Varga Reformház Kft a Rendelet 13. és 14. cikk szerinti információkat és az érintett jogairól szóló
+            tájékoztatást (Rendelet 15-22. és 34. cikk) és intézkedést díjmentesen biztosítja. Ha az érintett kérelme
+            egyértelműen megalapozatlan vagy – különösen annak ismétlődő jellege miatt – túlzó, az Adatkezelő
+            megtagadhatja a kérelem alapján történő intézkedést.</p>
+        <div></div>
+        <p>A kérelem egyértelműen megalapozatlan vagy túlzó jellegének bizonyítása az Adatkezelőt terheli.</p>
+        <div></div>
+        <p>Az egyéb közigazgatási vagy bírósági jogorvoslatok sérelme nélkül, az érintett jogosult arra, hogy panaszt
+            tegyen egy felügyeleti hatóságnál – különösen a szokásos tartózkodási helye, a munkahelye vagy a
+            feltételezett jogsértés helye szerinti tagállamban –, ha megítélése szerint a rá vonatkozó személyes adatok
+            kezelése megsérti a Rendeletet. Az egyéb közigazgatási vagy nem bírósági útra tartozó jogorvoslatok sérelme
+            nélkül, az érintett jogosult a hatékony bírósági jogorvoslatra, ha az illetékes felügyeleti hatóság nem
+            foglalkozik a panasszal, vagy három hónapon belül nem tájékoztatja az érintetett a benyújtott panasszal
+            kapcsolatos eljárási fejleményekről vagy annak eredményéről.</p>
+        <div></div>
+        <p>A rendelkezésre álló közigazgatási vagy nem bírósági útra tartozó jogorvoslatok – köztük a felügyeleti
+            hatóságnál történő panasztételhez való jog – sérelme nélkül, az érintett hatékony bírósági jogorvoslatra
+            jogosult, ha megítélése szerint a személyes adatainak a Rendeletnek nem megfelelő kezelése következtében
+            megsértették a Rendelet szerinti jogait. Az adatkezelővel vagy az adatfeldolgozóval szembeni eljárást az
+            adatkezelő vagy az adatfeldolgozó tevékenységi helye szerinti tagállam bírósága előtt kell megindítani. Az
+            ilyen eljárás megindítható az érintett szokásos tartózkodási helye szerinti tagállam bírósága előtt is.</p>
+        <div></div>
+        <p><b>Az érintett a Varga Reformház Kft</b>.<b> adatkezelési gyakorlatára vonatkozó esetleges panaszával a
+            </b>Nemzeti Adatvédelmi és Információszabadság Hatósághoz (röviden: NAIH, cím: 1125 Budapest, Szilágyi
+            Erzsébet fasor 22/c., postacím: 1530 Budapest, Pf.: 5.., telefon: +36 (1) 391-1400, fax: +36 (1) 391-1410,
+            email: <i>ugyfelszolgalat@naih.hu</i>, honlap: https://www.naih.hu), vagy bírósághoz fordulhat. A per
+            elbírálása az illetékes Törvényszék hatáskörébe tartozik. A per - az érintett választása szerint – a
+            lakóhelye vagy tartózkodási helye szerinti Törvényszék előtt is megindítható.</p>
+        <div></div>
+        <p>Az elektronikus úton küldött reklámokkal (Hírlevél) kapcsolatban a Nemzeti Média- és Hírközlési Hatóság jár
+            el, a részletes szabályozás az információs önrendelkezési jogról és az információszabadságról szóló 2011.
+            évi CXII. törvényben, valamint az elektronikus kereskedelmi szolgáltatások, valamint az információs
+            társadalommal összefüggő szolgáltatások egyes kérdéseiről szóló a 2001. évi CVIII. törvényben olvashatók.
+        </p>
+        <div></div>
+        <p>&nbsp;</p>
+        <div></div>
+        <p><b>12. Cookie-k</b></p>
+        <div></div>
+        <p>Amikor a látogató (nem Érintett) meglátogatja a Weboldalt, az Adatkezelő nem gyűjt be semmilyen személyes
+            adatot, amíg a látogató erre felhatalmazást nem ad. Az Adatkezelő feldolgozza a névtelen információkat,
+            annak érdekében, hogy az oldal tartalmát tökéletesíthesse, javíthassa. Ennek során az Adatkezelő beépítet
+            úgynevezett "cookie"-kat, amelyek összegyűjtik a látogató első szintű domain nevét, valamint a hozzáférés
+            dátumát és időpontját. A "cookie"-k önmagukban nem használhatók a látogató azonosságának feltárására. A
+            "cookie" egy olyan fájl, amely a látogató böngésző programjára kerül megküldésre, és a számítógép
+            merev-lemeze tárolja. A "cookie"-k nem rongálják a látogató számítógépét. A böngésző programot be lehet úgy
+            állítani, hogy jelezzen, ha "cookie" érkezik, és ilyen módon a látogató eldöntheti, hogy elfogadja-e az
+            adott "cookie"-t vagy sem. A cookie-fogadását a látogató – böngészője beállításai alapján – letilthatja.</p>
+        <div></div>
+        <p>&nbsp;</p>
+        <div></div>
+        <p><b>13. Gyermekek védelme</b></p>
+        <div></div>
+        <p>A Varga Reformház Kft Szolgáltatásainak igénybevételével kapcsolatos adatok és információk rendelkezésre
+            bocsátásával az Érintett kijelenti, hogy cselekvőképessége az érintett adatok és információk rendelkezésre
+            bocsátásával kapcsolatban nem korlátozott. Amennyiben az Érintett az adatok és információk rendelkezésre
+            bocsátásával kapcsolatban jogilag „cselekvőképtelennek” vagy „korlátozottan cselekvőképesnek” minősül, és
+            önálló nyilatkozatra ezzel kapcsolatban a vonatkozó jogszabályok alapján nem jogosult, az Érintett köteles a
+            jogszabályban megnevezett harmadik személy (pl. törvényes képviselő, gondnok) beleegyezését az információk
+            rendelkezésre bocsátásával kapcsolatban megszerezni.</p>
+        <div></div>
+        <p>A jognyilatkozatok érvényességének, így a kiskorúak adatainak kezeléséhez adott hozzájárulás érvényességének
+            szabályozását a Ptk. és a Rendelet tartalmazza. A Ptk. 2:13.§ és 2:14.§ (1) bekezdése értelmében
+            “cselekvőképtelen az a kiskorú, aki a tizennegyedik életévét nem töltötte be. A 14 éven aluli kiskorú
+            jognyilatkozata semmis, nevében a törvényes képviselője járhat el.” A Ptk. 2:11.§ és 2:12. § (1) bekezdése
+            szerint “Korlátozottan cselekvőképes az a kiskorú, aki a tizennegyedik életévét betöltötte és nem
+            cselekvőképtelen. A korlátozottan cselekvőképes kiskorú nyilatkozatának érvényességéhez - ha a Ptk. eltérően
+            nem rendelkezik - törvényes képviselőjének hozzájárulása szükséges.” A személyes adat hozzájáruláson alapuló
+            kezelése körében a Rendelet szerint “a közvetlenül gyermekeknek kínált, információs társadalommal összefüggő
+            szolgáltatások vonatkozásában végzett személyes adatok kezelése akkor jogszerű, ha a gyermek a 16. életévét
+            betöltötte. A 16. életévét be nem töltött gyermek esetén, a gyermekek személyes adatainak kezelése csak
+            akkor és olyan mértékben jogszerű, ha a hozzájárulást a gyermek feletti szülői felügyeletet gyakorló adta
+            meg, illetve engedélyezte.”</p>
+        <div></div>
+        <p>Amennyiben a Varga Reformház Kft észleli, hogy Szolgáltatásait nyilvánvalóan „cselekvőképtelennek” minősülő
+            személy, így különösen szülői illetve gondviselői engedély nélkül eljáró 16. életévét be nem töltött gyermek
+            kívánja igénybe venni, minden ésszerű erőfeszítést megtesz annak érdekében, hogy töröljön valamennyi
+            információt, amely a gyermek által került a birtokába, és biztosítja, hogy ezen információ más számára nem
+            kerül továbbításra, sem általa történő felhasználásra.</p>
+        <div></div>
+        <p>Kérjük az Érintetteket, közöljék a Varga Reformház Kftgal haladéktalanul, ha azt tapasztalják, hogy részünkre
+            gyermek bocsátott rendelkezésre önmagáról személyes adatot, információt a szülője vagy gondviselője
+            engedélye nélkül. Szülők és gondviselők számára javasoljuk, hogy tanítsák meg gyermekeiknek (különösen az
+            internet használata során) személyes adataik biztonságos és felelős kezelését.</p>
+        <div></div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reformház</title>
+    <link rel="stylesheet" type="text/css" href="slide navbar style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+			<div class="login">
+                <img src="reformhaz.png" alt="">
+				<form>
+					<label for="chk" aria-hidden="true">Bejelentkezés</label>
+					<div class="input-container">
+                        <i class="fa fa-envelope login__icon"></i>
+                        <input type="email" name="email" id="LiEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-lock login__icon"></i>
+                        <input type="password" name="pswd" id="LiPassword" placeholder="Jelszó" required="">
+                    </div>
+					<button id="LiButton">Bejelentkezés</button>
+				</form>
+                
+                <div class="social-login">
+                    <h3>Elérthetőségeink</h3>
+                    <div class="social-icons">
+                        <a href="https://www.reformhaz.hu/" target="_blank" class="social-login__icon fa fa-globe"></a>
+                        <a href="https://www.facebook.com/vargareformhaz?locale=hu_HU" target="_blank" class="social-login__icon fa fa-facebook"></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@reformhaz.hu
+                        " class="social-login__icon fa fa-envelope" target="_blank"></a>
+                    </div>
+                </div>
+			</div>
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Regisztráció</label>
+                    <div class="input-container">
+                        <i class="fa fa-user signup__icon"></i>
+                        <input type="text" name="txt" id="SuName" placeholder="Teljes Név" required="">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-envelope signup__icon"></i>
+                        <input type="email" name="email" id="SuEmail" placeholder="Email" required="">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-lock signup__icon"></i>
+                        <input type="password" name="pswd" id="SuPassword" placeholder="Jelszó" required="">
+                    </div>
+                    <span id="adatLinks">
+                        <input type="checkbox" name="" id="AdatCheck" required="">
+                        Hozzájárulok az adataim kezeléséhez és elfogadom az
+                        <a href="policy.html" target="_blank">Adatkezelési tájékoztatót.</a>
+                    </span>
+					<button id="SuButton">Regisztrálás</button>
+				</form>
+			</div>
+	</div>
+    <script src="src/main.js"></script>
+</body>
+</html>
