@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <div id="policiesTitle">
-        <div id="aszfTitle" tabindex="0" >
+    <div id="Titles">
+        <div class="policiesTitle active" id="aszfTitle" tabindex="0" >
             Általános szerződési feltételek
         </div>
-        <div id="aktTitle" tabindex="0">
+        <div class="policiesTitle" id="aktTitle" tabindex="0">
             Adatkezelési tájékoztató
         </div>
         <script>
@@ -26,6 +26,16 @@
                 document.getElementById("aszfDiv").style.display = "none";
                 document.getElementById("aktDiv").style.display = "block";
             })
+        const items = document.querySelectorAll(".policiesTitle");
+        
+        items.forEach(item => {
+            item.addEventListener("click", function(){
+                items.forEach(el => {
+                    el.classList.remove("active");
+                })
+                item.classList.add("active");
+            })
+        })
         </script>
     </div>
     <div class='policiesDiv' id="aszfDiv">

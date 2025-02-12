@@ -7,32 +7,31 @@
     font-family: 'Open Sans', sans-serif;
     margin: 0 auto;
 }
-#policiesTitle
+#Titles
 {
     display: flex;
     justify-content: center; 
     gap: 30px;
     color: #888888;
-    cursor: pointer;
-    text-decoration: underline;
     margin-bottom: 20px;
 }
-#aszfTitle:hover
+.policiesTitle
+{
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: gray;
+    transition: color 0.3s;
+}
+
+
+.policiesTitle:hover
 {
     color: #8db600;
     text-decoration: underline;
 }
-#aktTitle:hover
-{
-    color: #8db600;
-    text-decoration: underline;
-}
-#aszfTitle:focus
-{
-    color: #8db600 ;
-    text-decoration: underline;
-}
-#aktTitle:focus
+
+.active
 {
     color: #8db600 ;
     text-decoration: underline;
