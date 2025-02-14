@@ -206,8 +206,8 @@ img {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: "red";
     font-size: 11px;
+	color: red;
 }
 
 /*-----*/

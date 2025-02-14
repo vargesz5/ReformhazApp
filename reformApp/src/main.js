@@ -82,6 +82,7 @@ function SignUpSaveData() {
 
 /*Login Kezelése*/
 document.getElementById("LiButton").addEventListener("click", LoginToApp)
-function LoginToApp() {
-
+function LoginToApp() 
+{
+    
 }
