@@ -48,16 +48,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const signupForm = document.querySelector(".signup form");
     const passwordInput = document.getElementById("SuPassword");
     const wrongPassword = document.getElementById("shortPassword");
+
     signupForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
         const getP = document.getElementById("getP");
         if (passwordInput.value.length < 6) {
             event.preventDefault();
             if(getP==undefined)
             {
                 let p = document.createElement("p");
-            p.setAttribute("id", "getP");
-            p.innerHTML= "A jelszónak legalább 6 karakter hosszúnak kell lennie!";
-            wrongPassword.appendChild(p)
+                p.setAttribute("id", "getP");
+                p.innerHTML= "A jelszónak legalább 6 karakter hosszúnak kell lennie!";
+                wrongPassword.appendChild(p)
             }
             else
             {
@@ -66,10 +69,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         else
         {
+            wrongPassword.innerHTML="";
+            let popup = document.getElementById("popup");
+            popup.style.display = "flex";
+            popup.style.transform = "translateY(-100%)";
+            setTimeout(() => {
+                popup.style.transition = "transform 0.5s ease-out";
+                popup.style.transform = "translateY(0)";
+            }, 10);
+            let SignupName = document.getElementById('SuName');
+            let SignupEmail = document.getElementById('SuEmail');
+            let SignupPassword = document.getElementById('SuPassword');
+            let SignupCheck = document.getElementById("AdatKezelesCheck");
+            SignupName.value = "";
+            SignupEmail.value = "";
+            SignupPassword.value = "";
+            SignupCheck.checked=false;
             SignUpSaveData;
         }
     });
 });
+/*Close PopUp*/
+document.querySelector(".close-btn").addEventListener("click", function() {
+    let popup = document.getElementById("popup");
+    popup.style.transition = "transform 0.5s ease-in";
+    popup.style.transform = "translateY(-100%)";
+    setTimeout(() => { popup.style.display = "none"; }, 500);
+});
+
 
 function SignUpSaveData() {
     let SignupName = document.getElementById('SuName').value;
