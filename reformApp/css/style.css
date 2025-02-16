@@ -202,13 +202,11 @@ img {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-<<<<<<< HEAD
-	color: red;
+	color: #D90000;
 	text-decoration: underline;
-=======
->>>>>>> 86c9004b3b50799565f690c589525e6970cee88c
     font-size: 11px;
-	color: red;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px white; 
 }
 
 .popup {
