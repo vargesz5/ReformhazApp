@@ -1,3 +1,4 @@
+/*InputFields Clear/Disable*/
 function HandleInputFields() {
     let LoginEmail = document.getElementById('LiEmail');
     let LoginPassword = document.getElementById('LiPassword');
@@ -9,7 +10,7 @@ function HandleInputFields() {
     let SignupButton = document.getElementById('SuButton');
     document.getElementById('loginTab').addEventListener('click', function () {
         let shortPassword = document.getElementById("shortPassword");
-        shortPassword.innerHTML="";
+        shortPassword.innerHTML = "";
         document.getElementById('signupTab').checked = false;
         SignupName.disabled = true;
         SignupEmail.disabled = true;
@@ -19,7 +20,7 @@ function HandleInputFields() {
         SignupName.value = "";
         SignupEmail.value = "";
         SignupPassword.value = "";
-        SignupCheck.checked=false;
+        SignupCheck.checked = false;
 
         LoginEmail.disabled = false;
         LoginPassword.disabled = false;
@@ -42,34 +43,47 @@ function HandleInputFields() {
     });
 }
 HandleInputFields()
+/*----*/
 
-/*Sign Up Kezelése */
+/*Sign Up Start */
 document.addEventListener("DOMContentLoaded", function () {
     const signupForm = document.querySelector(".signup form");
-    const passwordInput = document.getElementById("SuPassword");
-    const wrongPassword = document.getElementById("shortPassword");
+    const wrongInputs = document.getElementById("wrongInputs");
 
     signupForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const getP = document.getElementById("getP");
-        if (passwordInput.value.length < 6) {
-            event.preventDefault();
-            if(getP==undefined)
-            {
-                let p = document.createElement("p");
-                p.setAttribute("id", "getP");
-                p.innerHTML= "A jelszónak legalább 6 karakter hosszúnak kell lennie!";
-                wrongPassword.appendChild(p)
-            }
-            else
-            {
-                return 0;
-            }
+        const passwordInput = document.getElementById("SuPassword").value;
+        const SignupEmail = document.getElementById("SuEmail").value;
+        let getP = document.getElementById("getP");
+
+        if (getP) {
+            getP.remove();
         }
-        else
-        {
-            wrongPassword.innerHTML="";
+
+        let p = document.createElement("p");
+        p.setAttribute("id", "getP");
+        let errorMessage = "";
+
+        if (!SignupEmail.includes("@") || !SignupEmail.includes(".com")) {
+            errorMessage = "Hibás az Email bevitel! ";
+        }
+
+        if (passwordInput.length < 6) {
+            errorMessage = "Túl rövid a jelszó!";
+        }
+
+        if(!SignupEmail.includes("@") || !SignupEmail.includes(".com") && passwordInput.length < 6)
+            errorMessage = "Túl rövid a jelszó és hibás az Email bevitel!"
+
+        if (errorMessage !== "") {
+            p.innerHTML = errorMessage;
+            wrongInputs.appendChild(p);
+        }
+
+        else {
+            wrongInputs.innerHTML = "";
+            /*Open PopUp*/
             let popup = document.getElementById("popup");
             popup.style.display = "flex";
             popup.style.transform = "translateY(-100%)";
@@ -77,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 popup.style.transition = "transform 0.5s ease-out";
                 popup.style.transform = "translateY(0)";
             }, 10);
+            /*----*/
             let SignupName = document.getElementById('SuName');
             let SignupEmail = document.getElementById('SuEmail');
             let SignupPassword = document.getElementById('SuPassword');
@@ -84,32 +99,32 @@ document.addEventListener("DOMContentLoaded", function () {
             SignupName.value = "";
             SignupEmail.value = "";
             SignupPassword.value = "";
-            SignupCheck.checked=false;
+            SignupCheck.checked = false;
             SignUpSaveData;
         }
     });
 });
 /*Close PopUp*/
-document.querySelector(".close-btn").addEventListener("click", function() {
+document.querySelector(".close-btn").addEventListener("click", function () {
     let popup = document.getElementById("popup");
     popup.style.transition = "transform 0.5s ease-in";
     popup.style.transform = "translateY(-100%)";
     setTimeout(() => { popup.style.display = "none"; }, 500);
 });
-
+/*----*/
 
 function SignUpSaveData() {
     let SignupName = document.getElementById('SuName').value;
     let SignupEmail = document.getElementById('SuEmail').value;
     let SignupPassword = document.getElementById('SuPassword').value;
 
-    
-    
-}
 
-/*Login Kezelése*/
+
+}
+/*Sign Up End*/
+
+/*Login Start*/
 document.getElementById("LiButton").addEventListener("click", LoginToApp)
-function LoginToApp() 
-{
-    
+function LoginToApp() {
+
 }

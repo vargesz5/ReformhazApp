@@ -19,43 +19,6 @@ body {
 	background: #ffffff;
 }
 
-#AdatKezelesSpan a{
-	text-decoration: none;
-	color: white;
-	font-weight: bold;
-	display: inline; 
-    white-space: nowrap;
-}
-#AdatKezelesSpan {
-	color: white;
-	font-size: 11px;
-	text-align: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap; 
-}
-
-#AdatKezelesCheck {
-	appearance: none;
-	width: 16px;
-	height: 16px;
-	border: 2px solid #ffffff;
-	border-radius: 3px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	margin: 3px;	
-}
-
-#AdatKezelesCheck:checked::before {
-	content: '\2714';
-	color: #8db600;
-	font-size: 14px;
-	font-weight: bold;
-}
-
 label {
 	color: #8db600;
 	font-size: 2.3em;
@@ -164,7 +127,6 @@ img {
 .social-login__icon:hover {
 	transform: scale(1.5);
 }
-
 /*-----*/
 
 /*Sign Up*/
@@ -197,7 +159,7 @@ img {
 	color: white;
 }
 
-#shortPassword
+#wrongInputs
 {
 	display: flex;
 	align-items: center;
@@ -237,6 +199,43 @@ img {
 	font-size: 20px;
 	color: red;
 }
+
+#AdatKezelesSpan a{
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	display: inline; 
+    white-space: nowrap;
+}
+#AdatKezelesSpan {
+	color: white;
+	font-size: 11px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap; 
+}
+
+#AdatKezelesCheck {
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #ffffff;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	margin: 3px;	
+}
+
+#AdatKezelesCheck:checked::before {
+	content: '\2714';
+	color: #8db600;
+	font-size: 14px;
+	font-weight: bold;
+}
 /*-----*/
 
 /*CheckBox*/
@@ -264,7 +263,4 @@ img {
 #loginTab:checked~.signup label {
 	transform: scale(.6);
 }
-
 /*-----*/
-
-/*Size by Phone*/
