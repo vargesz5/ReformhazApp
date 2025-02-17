@@ -11,8 +11,8 @@
 <body>
 	<div class="main">  	
         
-        <input type="checkbox" id="loginTab" name="authTab">
-        <input type="checkbox" id="signupTab" name="authTab" >
+        <input type="radio" id="loginTab" name="authTab">
+        <input type="radio" id="signupTab" name="authTab" >
         
 			<div class="login">
                 <img src="reformhaz.png" alt="">
@@ -25,6 +25,7 @@
                     <div class="input-container">
                         <i class="fa fa-lock login__icon"></i>
                         <input type="password" name="pswd" id="LiPassword" placeholder="Jelszó" required="">
+                        <i class="fa fa-eye-slash password-toggle" id="login_eyeIcon"></i>
                     </div>
 					<button id="LiButton">Bejelentkezés</button>
 				</form>
@@ -33,7 +34,7 @@
                     <h3>Elérthetőségeink</h3>
                     <div class="social-icons">
                         <a href="https://www.reformhaz.hu/" target="_blank" class="social-login__icon fa fa-globe"></a>
-                        <a href="https://www.facebook.com/vargareformhaz?locale=hu_HU" target="_blank" class="social-login__icon fa fa-facebook"></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@reformhaz.hu" class="social-login__icon fa fa-envelope" target="_blank"></a>
                         <a href="tel:+3652451566" class="social-login__icon fa fa-phone"></a>
                     </div>
                 </div>
@@ -52,9 +53,9 @@
                     </div>
                     <div class="input-container">
                         <i class="fa fa-lock signup__icon"></i>
-                        <input type="password" name="pswd" id="SuPassword" placeholder="Jelszó" required="">
+                        <input type="password" name="pswd" id="SuPassword" minlength="6" placeholder="Jelszó" required="">
+                        <i class="fa fa-eye-slash password-toggle" id="signup_eyeIcon"></i>
                     </div>
-                    <div id="wrongInputs"></div>
                     <span id="AdatKezelesSpan">
                         <input type="checkbox" name="" id="AdatKezelesCheck" required="">
                         Hozzájárulok az adataim kezeléséhez és elfogadom az

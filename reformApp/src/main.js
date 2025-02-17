@@ -1,109 +1,126 @@
-/*InputFields Clear/Disable*/
-function HandleInputFields() {
-    let LoginEmail = document.getElementById('LiEmail');
-    let LoginPassword = document.getElementById('LiPassword');
-    let LoginButton = document.getElementById('LiButton');
-    let SignupName = document.getElementById('SuName');
-    let SignupEmail = document.getElementById('SuEmail');
-    let SignupPassword = document.getElementById('SuPassword');
-    let SignupCheck = document.getElementById("AdatKezelesCheck");
-    let SignupButton = document.getElementById('SuButton');
-    document.getElementById('loginTab').addEventListener('click', function () {
-        let shortPassword = document.getElementById("shortPassword");
-        shortPassword.innerHTML = "";
-        document.getElementById('signupTab').checked = false;
-        SignupName.disabled = true;
-        SignupEmail.disabled = true;
-        SignupPassword.disabled = true;
-        SignupButton.disabled = true;
-        SignupCheck.disabled = true;
-        SignupName.value = "";
-        SignupEmail.value = "";
-        SignupPassword.value = "";
-        SignupCheck.checked = false;
+/* Handle Input Fields */
+document.addEventListener("DOMContentLoaded", function () {
+    let loginTab = document.getElementById("loginTab");
+    let signupTab = document.getElementById("signupTab");
 
-        LoginEmail.disabled = false;
-        LoginPassword.disabled = false;
-        LoginButton.disabled = false;
-    })
-    document.getElementById('signupTab').addEventListener('click', function () {
-        document.getElementById('loginTab').checked = false;
-        LoginEmail.disabled = true;
-        LoginPassword.disabled = true;
-        LoginButton.disabled = true;
-        LoginEmail.value = "";
-        LoginPassword.value = "";
+    loginTab.checked = true;
+    signupTab.checked = false;
 
-        SignupName.disabled = false;
-        SignupEmail.disabled = false;
-        SignupPassword.disabled = false;
-        SignupButton.disabled = false;
-        SignupCheck.disabled = false;
+    document.querySelector("label[for='loginTab']").addEventListener("click", function () {
+        if (!loginTab.checked) {
+            loginTab.checked = true;
+            signupTab.checked = false;
 
+            clearSignupFields()
+        }
     });
+
+    document.querySelector("label[for='signupTab']").addEventListener("click", function () {
+        if (!signupTab.checked) {
+            signupTab.checked = true;
+            loginTab.checked = false;
+
+            clearLoginFields()
+        }
+    });
+});
+
+function clearSignupFields() {
+    document.getElementById('SuName').value = "";
+    document.getElementById('SuEmail').value = "";
+    document.getElementById('SuPassword').value = "";
+    document.getElementById('AdatKezelesCheck').checked = false;
+    let eyeIcon = document.getElementById("signup_eyeIcon")
+    eyeIcon.classList.remove("fa-eye");
+    eyeIcon.classList.add("fa-eye-slash");
 }
-HandleInputFields()
+function clearLoginFields() {
+    document.getElementById('LiEmail').value = "";
+    document.getElementById('LiPassword').value = "";
+    let eyeIcon = document.getElementById("login_eyeIcon")
+    eyeIcon.classList.remove("fa-eye");
+    eyeIcon.classList.add("fa-eye-slash");
+}
+/*----*/
+
+/* Password EyeIcon */
+document.getElementById("login_eyeIcon").addEventListener("click", function () {
+    togglePasswordVisibility("LiPassword", "login_eyeIcon");
+});
+document.getElementById("signup_eyeIcon").addEventListener("click", function () {
+    togglePasswordVisibility("SuPassword", "signup_eyeIcon");
+});
+
+function togglePasswordVisibility(inputId, eyeId) {
+    var passwordField = document.getElementById(inputId);
+    var eyeIcon = document.getElementById(eyeId);
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        eyeIcon.classList.remove("fa-eye-slash");
+        eyeIcon.classList.add("fa-eye");
+    } else {
+        passwordField.type = "password";
+        eyeIcon.classList.remove("fa-eye");
+        eyeIcon.classList.add("fa-eye-slash");
+    }
+}
 /*----*/
 
 /*Sign Up Start */
 document.addEventListener("DOMContentLoaded", function () {
     const signupForm = document.querySelector(".signup form");
-    const wrongInputs = document.getElementById("wrongInputs");
 
     signupForm.addEventListener("submit", function (event) {
         event.preventDefault();
+        let SignupName = document.getElementById('SuName');
+        let SignupEmail = document.getElementById('SuEmail');
+        let SignupPassword = document.getElementById('SuPassword');
+        let SignupCheck = document.getElementById("AdatKezelesCheck");
 
-        const passwordInput = document.getElementById("SuPassword").value;
-        const SignupEmail = document.getElementById("SuEmail").value;
-        let getP = document.getElementById("getP");
+        /*Open PopUp*/
+        let popup = document.getElementById("popup");
+        popup.style.display = "flex";
+        popup.style.transform = "translateY(-100%)";
+        setTimeout(() => {
+            popup.style.transition = "transform 0.5s ease-out";
+            popup.style.transform = "translateY(0)";
+        }, 10);
+        /*----*/
 
-        if (getP) {
-            getP.remove();
-        }
+        SignUpSaveData;
 
-        let p = document.createElement("p");
-        p.setAttribute("id", "getP");
-        let errorMessage = "";
+        SignupName.value = "";
+        SignupEmail.value = "";
+        SignupPassword.value = "";
+        SignupCheck.checked = false;
 
-        if (!SignupEmail.includes("@") || !SignupEmail.includes(".com")) {
-            errorMessage = "Hibás az Email bevitel! ";
-        }
 
-        if (passwordInput.length < 6) {
-            errorMessage = "Túl rövid a jelszó!";
-        }
 
-        if(!SignupEmail.includes("@") || !SignupEmail.includes(".com") && passwordInput.length < 6)
-            errorMessage = "Túl rövid a jelszó és hibás az Email bevitel!"
-
-        if (errorMessage !== "") {
-            p.innerHTML = errorMessage;
-            wrongInputs.appendChild(p);
-        }
-
-        else {
-            wrongInputs.innerHTML = "";
-            /*Open PopUp*/
-            let popup = document.getElementById("popup");
-            popup.style.display = "flex";
-            popup.style.transform = "translateY(-100%)";
-            setTimeout(() => {
-                popup.style.transition = "transform 0.5s ease-out";
-                popup.style.transform = "translateY(0)";
-            }, 10);
-            /*----*/
-            let SignupName = document.getElementById('SuName');
-            let SignupEmail = document.getElementById('SuEmail');
-            let SignupPassword = document.getElementById('SuPassword');
-            let SignupCheck = document.getElementById("AdatKezelesCheck");
-            SignupName.value = "";
-            SignupEmail.value = "";
-            SignupPassword.value = "";
-            SignupCheck.checked = false;
-            SignUpSaveData;
-        }
     });
 });
+
+/* Email/Password Validity */
+document.getElementById("SuEmail").addEventListener("input", function () {
+    let emailValue = this.value;
+    if (emailValue === "" || !emailValue.includes("@") || !emailValue.includes(".")) {
+        this.setCustomValidity("Az Emailnek tartalmaznia kell '@' és '.'!");
+    } else {
+        this.setCustomValidity("");
+    }
+});
+document.getElementById("SuPassword").addEventListener("input", function () {
+    let password = this.value;
+
+    if (password.length < 6) {
+        this.setCustomValidity("A jelszónak legalább 6 karakterből kell állni");
+    }
+    else {
+        this.setCustomValidity("");
+    }
+})
+/*----*/
+
 /*Close PopUp*/
 document.querySelector(".close-btn").addEventListener("click", function () {
     let popup = document.getElementById("popup");

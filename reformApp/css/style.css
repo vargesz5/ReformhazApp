@@ -71,13 +71,6 @@ button:hover {
 	margin: 20px auto;
 }
 
-.input-container i {
-	position: absolute;
-	top: 50%;
-	left: 10px;
-	transform: translateY(-50%);
-}
-
 img {
 	height: auto;
 	max-width: 200px;
@@ -87,6 +80,28 @@ img {
 	margin-right: auto;
 }
 
+.input-container .login__icon,
+.input-container .signup__icon
+{
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    cursor: pointer;
+}
+
+.login .password-toggle {
+    color: #8db600; 
+}
+.signup .password-toggle {
+    color: white; 
+}
 /*-----*/
 
 /*Login*/
@@ -157,18 +172,6 @@ img {
 
 .signup__icon {
 	color: white;
-}
-
-#wrongInputs
-{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: #D90000;
-	text-decoration: underline;
-    font-size: 11px;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px white; 
 }
 
 .popup {
