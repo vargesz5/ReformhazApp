@@ -1,3 +1,19 @@
+/* Service Worker regisztrálása */
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then((registration) => {
+          console.log('Service Worker regisztrálva: ', registration);
+        })
+        .catch((error) => {
+          console.log('Service Worker hiba: ', error);
+        });
+    });
+  }
+  
+
 /* Handle Input Fields */
 document.addEventListener("DOMContentLoaded", function () {
     let loginTab = document.getElementById("loginTab");
