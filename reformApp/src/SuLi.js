@@ -31,6 +31,8 @@ function clearSignupFields() {
     document.getElementById('SuName').value = "";
     document.getElementById('SuEmail').value = "";
     document.getElementById('SuPassword').value = "";
+    document.getElementById("SuCompanyName").value = "";
+    document.getElementById("SuTaxNumber").value = "";
     document.getElementById('AdatKezelesCheck').checked = false;
     let eyeIcon = document.getElementById("signup_eyeIcon")
     eyeIcon.classList.remove("fa-eye");
@@ -85,10 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
             popup.style.transform = "translateY(0)";
         }, 10);
         /*----*/
-        clearSignupFields;
-        SignUpSaveData;
-
-
+        clearSignupFields() 
+        SignUpSaveData();
     });
 });
 
@@ -129,6 +129,8 @@ document.querySelector(".close-btn").addEventListener("click", function () {
     popup.style.transition = "transform 0.5s ease-in";
     popup.style.transform = "translateY(-100%)";
     setTimeout(() => { popup.style.display = "none"; }, 500);
+    document.getElementById("loginTab").checked = true;
+    document.getElementById("signupTab").checked = false;
 });
 /*----*/
 
@@ -136,6 +138,8 @@ function SignUpSaveData() {
     let SignupName = document.getElementById('SuName').value;
     let SignupEmail = document.getElementById('SuEmail').value;
     let SignupPassword = document.getElementById('SuPassword').value;
+    let SignUpCompanyName =  document.getElementById("SuCompanyName").value;
+    let SignUpTaxNumber = document.getElementById("SuTaxNumber").value;
 
 
 
