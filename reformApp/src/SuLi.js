@@ -1,4 +1,4 @@
-/* Handle Input Fields */
+/* Handle SignUp And Login */
 document.addEventListener("DOMContentLoaded", function () {
     let loginTab = document.getElementById("loginTab");
     let signupTab = document.getElementById("signupTab");
@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+/*-------*/
 
+/* Clear Input Fields */
 function clearSignupFields() {
     document.getElementById('SuName').value = "";
     document.getElementById('SuEmail').value = "";
@@ -73,10 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     signupForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        let SignupName = document.getElementById('SuName');
-        let SignupEmail = document.getElementById('SuEmail');
-        let SignupPassword = document.getElementById('SuPassword');
-        let SignupCheck = document.getElementById("AdatKezelesCheck");
 
         /*Open PopUp*/
         let popup = document.getElementById("popup");
@@ -87,20 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
             popup.style.transform = "translateY(0)";
         }, 10);
         /*----*/
-
+        clearSignupFields;
         SignUpSaveData;
-
-        SignupName.value = "";
-        SignupEmail.value = "";
-        SignupPassword.value = "";
-        SignupCheck.checked = false;
-
 
 
     });
 });
 
-/* Email/Password Validity */
+/* Email/Password/TaxNumber Validity */
 document.getElementById("SuEmail").addEventListener("input", function () {
     let emailValue = this.value;
     if (emailValue === "" || !emailValue.includes("@") || !emailValue.includes(".")) {
@@ -118,6 +110,16 @@ document.getElementById("SuPassword").addEventListener("input", function () {
     else {
         this.setCustomValidity("");
     }
+})
+document.getElementById("SuTaxNumber").addEventListener("input", function () {
+const vatInput = document.getElementById("SuTaxNumber");
+const vatRegex = /^[A-Z]{2}\d{8,12}$/;
+
+if (vatRegex.test(vatInput.value)) {
+    this.setCustomValidity("");
+} else {
+    this.setCustomValidity("Hibás formátum! Az adószámnak két betűs országkóddal kell kezdődnie, utána 8-12 számjegy következik.");
+}
 })
 /*----*/
 
