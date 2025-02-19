@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             popup.style.transform = "translateY(0)";
         }, 10);
         /*----*/
-        clearSignupFields() 
+
         SignUpSaveData();
     });
 });
@@ -111,6 +111,24 @@ document.getElementById("SuPassword").addEventListener("input", function () {
         this.setCustomValidity("");
     }
 })
+document.getElementById("LiEmail").addEventListener("input", function () {
+    let emailValue = this.value;
+    if (emailValue === "" || !emailValue.includes("@") || !emailValue.includes(".")) {
+        this.setCustomValidity("Az Emailnek tartalmaznia kell '@' és '.'!");
+    } else {
+        this.setCustomValidity("");
+    }
+});
+document.getElementById("LiPassword").addEventListener("input", function () {
+    let password = this.value;
+
+    if (password.length < 6) {
+        this.setCustomValidity("A jelszónak legalább 6 karakterből kell állni");
+    }
+    else {
+        this.setCustomValidity("");
+    }
+});
 document.getElementById("SuTaxNumber").addEventListener("input", function () {
 const vatInput = document.getElementById("SuTaxNumber");
 const vatRegex = /^[A-Z]{2}\d{8,12}$/;
@@ -140,9 +158,12 @@ function SignUpSaveData() {
     let SignupPassword = document.getElementById('SuPassword').value;
     let SignUpCompanyName =  document.getElementById("SuCompanyName").value;
     let SignUpTaxNumber = document.getElementById("SuTaxNumber").value;
+    let DataIsSaved = false;
 
-
-
+    if(DataIsSaved==true)
+    {
+        clearSignupFields() 
+    }
 }
 /*Sign Up End*/
 

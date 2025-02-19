@@ -25,18 +25,31 @@ label {
 	justify-content: center;
 	display: flex;
 	margin: 20px;
+	margin-bottom: 30px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
 
 input {
-	width: 60%;
 	background: #f3f1f1;
 	justify-content: center;
 	display: flex;
 	margin: 20px auto;
 	padding: 12px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+.input-container {
+	position: relative;
+	width: 90%;
+	margin: 20px auto;
+}
+.input-container input {
+	width: 60%;
+	background: #f3f1f1;
+	padding: 12px 12px 12px 40px;
 	border: none;
 	outline: none;
 	border-radius: 5px;
@@ -52,7 +65,7 @@ button {
 	background: #6c6c6c;
 	font-size: 1em;
 	font-weight: bold;
-	margin-top: 20px;
+	margin-top: 25px;
 	outline: none;
 	border: none;
 	border-radius: 5px;
@@ -63,12 +76,6 @@ button {
 button:hover {
 	background: #8db600;
 	color: white;
-}
-
-.input-container {
-	position: relative;
-	width: 80%;
-	margin: 20px auto;
 }
 
 img {
@@ -84,23 +91,18 @@ img {
 .input-container .signup__icon
 {
     position: absolute;
-    left: 10px; 
+    left: 50px; 
     top: 50%;
     transform: translateY(-50%);
+	color: #8db600;
 }
 
 .password-toggle {
     position: absolute;
-    right: 10px;
-    top: 50%;
+    right: 50px;
+    top: 30%;
     cursor: pointer;
-}
-
-.login .password-toggle {
-    color: #8db600; 
-}
-.signup .password-toggle {
-    color: white; 
+	color: #8db600;
 }
 /*-----*/
 
@@ -169,10 +171,6 @@ img {
 .signup button:hover {
 	background-color: white;
 	color: #8db600;
-}
-
-.signup__icon {
-	color: white;
 }
 
 #AdatKezelesSpan a{
