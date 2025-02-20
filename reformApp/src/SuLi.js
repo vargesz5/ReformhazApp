@@ -24,6 +24,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+let isKeyboardVisible = false;
+
+// Ha a billentyűzet felugrik, a main div-et feljebb mozgatjuk
+window.addEventListener("resize", function() {
+    if (window.innerHeight < 600 && !isKeyboardVisible) {  // Ha a képernyő magassága kisebb, mint 600px
+        document.querySelector(".main").style.transform = "translateY(-100px)"; // Elmozdítjuk a tartalmat
+        isKeyboardVisible = true;
+    } else if (window.innerHeight >= 600 && isKeyboardVisible) {
+        document.querySelector(".main").style.transform = "translateY(0)"; // Visszaállítjuk a normál pozícióba
+        isKeyboardVisible = false;
+    }
+});
 /*-------*/
 
 /* Clear Input Fields */
