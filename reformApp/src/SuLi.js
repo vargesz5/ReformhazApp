@@ -24,16 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-document.addEventListener("click", function(e) {
-    const signupTab = document.getElementById('signupTab');
-    const signupDiv = document.querySelector('.signup');
+/*-------*/
 
-    if (!signupDiv.contains(e.target) && !signupTab.checked) {
-        signupDiv.style.transition = 'none'; // Ha kívül kattintasz, nincs animáció
-    } else {
-        signupDiv.style.transition = 'transform 0.5s ease'; // Ha a form-ban belül vagy, legyen animáció
-    }
-});
 /* Keyboard comeUp => all inputfields be visible */
 let isKeyboardVisible = false;
 
@@ -67,7 +59,7 @@ function clearLoginFields() {
     eyeIcon.classList.remove("fa-eye");
     eyeIcon.classList.add("fa-eye-slash");
 }
-/*----*/
+/*-------*/
 
 /* Password EyeIcon */
 document.getElementById("login_eyeIcon").addEventListener("click", function () {
@@ -91,7 +83,7 @@ function togglePasswordVisibility(inputId, eyeId) {
         eyeIcon.classList.add("fa-eye-slash");
     }
 }
-/*----*/
+/*-------*/
 
 /*Sign Up Start */
 document.addEventListener("DOMContentLoaded", function () {
@@ -161,7 +153,7 @@ if (vatRegex.test(vatInput.value)) {
     this.setCustomValidity("Hibás formátum! Az adószámnak két betűs országkóddal kell kezdődnie, utána 8-12 számjegy következik.");
 }
 })
-/*----*/
+/*-------*/
 
 /*Close PopUp*/
 document.querySelector(".close-btn").addEventListener("click", function () {
@@ -172,7 +164,7 @@ document.querySelector(".close-btn").addEventListener("click", function () {
     document.getElementById("loginTab").checked = true;
     document.getElementById("signupTab").checked = false;
 });
-/*----*/
+/*-------*/
 
 function SignUpSaveData() {
     let SignupName = document.getElementById('SuName').value;
