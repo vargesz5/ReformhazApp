@@ -251,7 +251,7 @@ img {
 }
 
 #signupTab:checked ~ .signup {
-	transform: translateY(-92%);
+	transform: translateY(-90vh);
 }
 #signupTab:checked~.signup label {
 	transform: scale(1);
