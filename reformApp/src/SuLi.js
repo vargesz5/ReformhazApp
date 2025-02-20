@@ -24,15 +24,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+document.addEventListener("click", function(e) {
+    const signupTab = document.getElementById('signupTab');
+    const signupDiv = document.querySelector('.signup');
+
+    if (!signupDiv.contains(e.target) && !signupTab.checked) {
+        signupDiv.style.transition = 'none'; // Ha kívül kattintasz, nincs animáció
+    } else {
+        signupDiv.style.transition = 'transform 0.5s ease'; // Ha a form-ban belül vagy, legyen animáció
+    }
+});
+/* Keyboard comeUp => all inputfields be visible */
 let isKeyboardVisible = false;
 
-// Ha a billentyűzet felugrik, a main div-et feljebb mozgatjuk
 window.addEventListener("resize", function() {
-    if (window.innerHeight < 600 && !isKeyboardVisible) {  // Ha a képernyő magassága kisebb, mint 600px
-        document.querySelector(".main").style.transform = "translateY(-100px)"; // Elmozdítjuk a tartalmat
+    if (window.innerHeight < 600 && !isKeyboardVisible) {  
+        document.querySelector(".main").style.transform = "translateY(-100px)";
         isKeyboardVisible = true;
     } else if (window.innerHeight >= 600 && isKeyboardVisible) {
-        document.querySelector(".main").style.transform = "translateY(0)"; // Visszaállítjuk a normál pozícióba
+        document.querySelector(".main").style.transform = "translateY(0)"; 
         isKeyboardVisible = false;
     }
 });
