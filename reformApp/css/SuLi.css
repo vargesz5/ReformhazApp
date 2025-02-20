@@ -16,7 +16,6 @@ body {
 .main {
 	width: 100vw;
 	height: 100vh;
-	overflow: hidden;
 	background: #ffffff;
 }
 
@@ -152,7 +151,6 @@ img {
 	border-radius: 60% / 10%;
 	transform: translateY(-160px);
 	transition: .8s ease-in-out;
-
 }
 
 .signup label {
