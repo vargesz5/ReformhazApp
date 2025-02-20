@@ -7,12 +7,15 @@ body {
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background-color:#d4ff48af
+	background-color:#d4ff48af;
+	width: 100%;
+    height: 100%;
+	overflow: hidden;
 }
 
 .main {
-	width: 350px;
-	height: 700px;
+	width: 100vw;
+	height: 100vh;
 	overflow: hidden;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #686868;
@@ -43,22 +46,24 @@ input {
 }
 .input-container {
 	position: relative;
-	width: 90%;
+	width: 100%;
+	max-width: 400px;
 	margin: 20px auto;
 }
 .input-container input {
 	width: 60%;
 	background: #f3f1f1;
-	padding: 12px 12px 12px 40px;
+	padding: 10px 40px;
 	border: none;
 	outline: none;
 	border-radius: 5px;
 }
 
 button {
-	width: 60%;
+	width: 100%;
 	height: 40px;
 	margin: 10px auto;
+	max-width: 300px;
 	justify-content: center;
 	display: block;
 	color: white;
@@ -117,13 +122,11 @@ img {
 }
 
 .social-login {
-	position: absolute;
+	position: relative;
 	height: 140px;
-	width: 160px;
+	width: 100%;
 	text-align: center;
 	margin-top: 50px;
-	margin-left: 90px;
-	margin-right: 90px;
 	color: #8db600;
 }
 

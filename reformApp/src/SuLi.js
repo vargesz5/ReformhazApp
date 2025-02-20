@@ -160,6 +160,7 @@ function SignUpSaveData() {
     let SignUpTaxNumber = document.getElementById("SuTaxNumber").value;
     let DataIsSaved = false;
 
+    DataIsSaved=true;
     if(DataIsSaved==true)
     {
         clearSignupFields() 
