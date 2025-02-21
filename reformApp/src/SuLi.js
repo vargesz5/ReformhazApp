@@ -29,18 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
 /* Keyboard comeUp => all inputfields be visible */
 let isKeyboardVisible = false;
 
-window.addEventListener('resize', function () {
-    
-    if (window.innerHeight < 500) {
-        if (!isKeyboardVisible) {
-            isKeyboardVisible = true;
-            document.querySelector('.signup').style.transition = 'none'; 
-        }
-    } else {
-        if (isKeyboardVisible) {
-            isKeyboardVisible = false;
-            document.querySelector('.signup').style.transition = '.8s ease-in-out'; 
-        }
+window.addEventListener("resize", function() {
+    if (window.innerHeight < 600 && !isKeyboardVisible) {  
+        document.querySelector(".main").style.transform = "translateY(-100px)";
+        document.querySelector('.signup').style.transition = 'none'; 
+        isKeyboardVisible = true;
+    } else if (window.innerHeight >= 600 && isKeyboardVisible) {
+        document.querySelector(".main").style.transform = "translateY(0)"; 
+        document.querySelector('.signup').style.transition = '.8s ease-in-out'; 
+        isKeyboardVisible = false;
     }
 });
 /*-------*/
