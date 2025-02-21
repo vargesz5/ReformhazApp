@@ -70,6 +70,16 @@ img {
     height: auto;
     display: block;
 }
+.logo
+{
+    width: 40%;
+    height: 40%;
+}
+.logo__div
+{
+    display: flex;
+    align-items: center;
+}
 /*===== CLASS CSS ===== */
 .section-title {
     position: relative;
@@ -205,12 +215,6 @@ img {
     color: var(--first-color);
 }
 
-.home__img {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 260px;
-}
 .logo 
 {
     object-fit: contain;
@@ -345,9 +349,6 @@ img {
         row-gap: 2rem;
     }
 
-    .home__img {
-        width: 200px;
-    }
 }
 
 @media screen and (min-width: 576px) {
@@ -365,11 +366,6 @@ img {
     .home__social-icon {
         margin-bottom: 0;
         margin-right: var(--mb-4);
-    }
-
-    .home__img {
-        width: 300px;
-        bottom: 25%;
     }
 
     .about__container {
@@ -444,11 +440,6 @@ img {
         padding: 8rem 0 2rem;
     }
 
-    .home__img {
-        width: 400px;
-        bottom: 10%;
-    }
-
     .about__container {
         padding-top: 2rem;
     }
@@ -480,7 +471,4 @@ img {
         padding: 10rem 0 2rem;
     }
 
-    .home__img {
-        width: 450px;
-    }
 }
