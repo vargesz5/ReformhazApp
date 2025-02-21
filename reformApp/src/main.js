@@ -71,19 +71,29 @@ const scrollActive = () =>{
 window.addEventListener('scroll', scrollActive)
 // Alapértelmezett bezárás
 
-function toggleDropdown(arrow) {
-    const description = arrow.querySelector('.skills__bar');
-    const isOpen = description.style.display === 'block';
-    
-    const CurrentArrows = arrow.querySelector('.skills__arrow');
-    CurrentArrows.classList.remove("bx-chevron-down")
-    CurrentArrows.classList.add("bx-chevron-up");
+/* Nyilak kezelés + dropdown Div */
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".skills__data").forEach(item => {
+        item.addEventListener("click", function () {
+            const description = this.querySelector(".skills__bar");
+            const arrowIcon = this.querySelector(".skills__arrow");
 
-    description.style.display = isOpen ? 'none' : 'block';
-}
+            // Ha nyitva van, bezárjuk, ha zárva van, kinyitjuk
+            const isOpen = description.style.display === "block";
 
+            // Minden más panelt bezárunk
+            document.querySelectorAll(".skills__bar").forEach(bar => bar.style.display = "none");
+            document.querySelectorAll(".skills__arrow").forEach(icon => icon.style.transform = "rotate(180deg)");
 
-document.querySelectorAll('.skills__bar').forEach(bar => bar.style.display = 'none');
+            if (!isOpen) {
+                description.style.display = "block"; // Megjelenítés
+                arrowIcon.style.transform = "rotate(0deg)"; // Ikon forgatás
+            }
+        });
+    });
+document.querySelectorAll(".skills__bar").forEach(bar => bar.style.display = "none");
+});
+
 /*===== SCROLL REVEAL ANIMATION =====*/
 
 const sr = ScrollReveal({

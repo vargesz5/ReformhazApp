@@ -281,7 +281,10 @@ img {
     box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
     cursor: pointer;
 }
-
+.skills__description
+{
+    background-color: #a9a9a989;
+}
 .skills__icon {
     font-size: 2rem;
     margin-right: var(--mb-2);
@@ -294,13 +297,12 @@ img {
 }
 
 .skills__bar {
-    position: absolute;
+    position: relative;
     left: 0;
     bottom: 0;
     background-color: var(--first-color);
     height: 0.25rem;
     border-radius: 0.5rem;
-    z-index: var(--z-back);
 }
 
 .skills__communication {
