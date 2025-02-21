@@ -13,11 +13,7 @@ body {
 	overflow: hidden;
 	position: relative;
 }
-@media (max-width: 768px) {
-    .signup {
-        transition: none; /* Disable the transition when the keyboard is visible */
-    }
-}
+
 .main {
 	width: 100vw;
 	height: 100vh;

@@ -32,11 +32,9 @@ let isKeyboardVisible = false;
 window.addEventListener("resize", function() {
     if (window.innerHeight < 600 && !isKeyboardVisible) {  
         document.querySelector(".main").style.transform = "translateY(-100px)";
-        document.querySelector('.signup').style.transition = 'none'; 
         isKeyboardVisible = true;
     } else if (window.innerHeight >= 600 && isKeyboardVisible) {
         document.querySelector(".main").style.transform = "translateY(0)"; 
-        document.querySelector('.signup').style.transition = '.8s ease-in-out'; 
         isKeyboardVisible = false;
     }
 });

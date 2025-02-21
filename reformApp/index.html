@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <title>Landing Page</title>
+</head>
+
+<body>
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Varga Reformház</a>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Otthon</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">Rólunk</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Tudásunk</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Kapcsolat</a></li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home bd-grid" id="home">
+            <div class="home__data">
+                <h1 class="home__title">Üdvözöljük,<br>A <span class="home__title-color">Varga Reformház
+                        <br>Kft-nél</span><br>
+                </h1>
+                <a href="SuLi.html" class="button">Bejelentkezés</a>
+            </div>
+            <div class="home__img">
+                <img src="reformhaz.png" class="logo" alt="">
+            </div>
+        </section>
+        <!--===== ABOUT =====-->
+        <section class="about section " id="about">
+            <h2 class="section-title">Rólunk</h2>
+            <div class="about__container">
+                <div class="about__img">
+                    <img src="assets/img/about.jpg" alt="">
+                </div>
+                <div>
+                    <h2 class="about__subtitle">Kik vagyunk?</h2>
+                    <p class="about__text">Több mint 20 éve foglalkozunk gyógynövények forgalmazásával <br> és célunk a természetes egészségmegoldások népszerűsítése.</p>
+                </div>
+            </div>
+        </section>
+        <!--===== SKILLS =====-->
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Tudásunk</h2>
+            <div class="skills__container bd-grid">
+                <div>
+                    <h2 class="skills__subtitle">Mi az ami motivál minket?</h2>
+                    <p class="skills__text">Szenvedélyünk és célunk, hogy minél több ember számára elérhetővé tegyük az egészséges életmódot.</p>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bx-chat skills__icon'></i>
+                            <span class="skills__name">Vásárlói vélemények és visszajelzések</span>
+                        </div>
+                        <div class="skills__bar skills__communication">
+                        </div>
+                        <div>
+                            <span class="skills__percentage">90%</span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bx-star skills__icon'></i>
+                            <span class="skills__name">Termékek minősége</span>
+                        </div>
+                        <div class="skills__bar skills__design">
+                        </div>
+                        <div>
+                            <span class="skills__percentage">99%</span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bx-user skills__icon'></i>
+                            <span class="skills__name">Szaktanácsadás</span>
+                        </div>
+                        <div class="skills__bar skills__content editing">
+                        </div>
+                        <div>
+                            <span class="skills__percentage">95%</span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bx-refresh skills__icon'></i>
+                            <span class="skills__name">Fenntarthatóság </span>
+                        </div>
+                        <div class="skills__bar skills__adaptability">
+                        </div>
+                        <div>
+                            <span class="skills__percentage">85%</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDKtGCW7NhGK4Ivf87-AaRDCQs66vJ-HxfHlvN44JhvEqPmnKqbEj460oJ&s=10"
+                        alt="" class="skills__img">
+                </div>
+            </div>
+        </section>
+        <!--===== CONTACT =====-->
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Kapcsolat</h2>
+            <div class="contact__container bd-grid">
+                <form action="" class="contact__form">
+                    <input type="text" placeholder="Teljes Név" class="contact__input">
+                    <input type="mail" placeholder="Email" class="contact__input">
+                    <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                    <input type="button" value="Submit" class="contact__button button">
+                </form>
+            </div>
+        </section>
+    </main>
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--===== MAIN JS =====-->
+    <script src="src/main.js"></script>
+</body>
+
+</html>
