@@ -69,7 +69,21 @@ const scrollActive = () =>{
 }
 
 window.addEventListener('scroll', scrollActive)
+// Alapértelmezett bezárás
 
+function toggleDropdown(arrow) {
+    const description = arrow.querySelector('.skills__bar');
+    const isOpen = description.style.display === 'block';
+    
+    const CurrentArrows = arrow.querySelector('.skills__arrow');
+    CurrentArrows.classList.remove("bx-chevron-down")
+    CurrentArrows.classList.add("bx-chevron-up");
+
+    description.style.display = isOpen ? 'none' : 'block';
+}
+
+
+document.querySelectorAll('.skills__bar').forEach(bar => bar.style.display = 'none');
 /*===== SCROLL REVEAL ANIMATION =====*/
 
 const sr = ScrollReveal({

@@ -279,6 +279,7 @@ img {
     margin-bottom: var(--mb-4);
     border-radius: 0.5rem;
     box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+    cursor: pointer;
 }
 
 .skills__icon {
@@ -320,6 +321,19 @@ img {
 
 .skills__img {
     border-radius: 0.5rem;
+}
+
+.skills__arrow {
+    margin-left: auto;
+    color: var(--first-color);
+}
+
+.bx-chevron-up {
+    transform: rotate(180deg);
+}
+
+.skills__description {
+    margin: 10px 0;
 }
 
 /* ===== CONTACT =====*/
