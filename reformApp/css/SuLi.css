@@ -19,14 +19,7 @@ body {
 	height: 100vh;
 	background: #ffffff;
 }
-.main.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    transform: translateY(0);
-}
+
 
 label {
 	color: #8db600;
@@ -162,8 +155,8 @@ img {
 	transition: .8s ease-in-out;
 }
 .signup.no-animation {
-	transform: translateY(0); /* Az animáció eltávolítása, ha nem akarjuk, hogy feljöjjön */
-	transition: none; /* Nincs transition, így nem lesz sima mozgás */
+	transform: translateY(0); 
+	transition: none;
   }
   
 .signup label {
