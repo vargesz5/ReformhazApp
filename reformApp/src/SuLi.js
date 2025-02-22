@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /*-------*/
 
 /* Keyboard comeUp => all inputfields be visible */
+// Figyeljük a resize eseményt a billentyűzet láthatóságának figyelembevételével.
 let isKeyboardVisible = false;
 
 window.addEventListener("resize", function() {
@@ -40,22 +41,36 @@ window.addEventListener("resize", function() {
         isKeyboardVisible = false;
     }
 });
+
+// Az input mezőre figyelő események
 let inputFields = document.querySelectorAll("input");
 
 inputFields.forEach(input => {
     input.addEventListener("focus", function() {
-        document.querySelector(".signup").style.transition = ".8s ease-in-out"; // Transition on focus
+        // Ha fókuszálunk az input mezőre, akkor engedélyezzük a transition-t
+        document.querySelector(".signup").style.transition = ".8s ease-in-out";
     });
 
     input.addEventListener("blur", function() {
-        document.querySelector(".signup").style.transition = "none"; // Remove transition on blur
+        // Ha elhagyjuk az input mezőt, eltávolítjuk a transition-t, hogy azonnal visszaálljon a pozíciója
+        document.querySelector(".signup").style.transition = "none";
+        document.querySelector(".signup").style.transform = "translateY(0)"; // Biztosítjuk, hogy helyén legyen
 
-        // Ensure the transition is restored if input is blurred and not focused
+        // Ha másik input mezőn kívüli elemre kattintunk, és nincs input mező aktívan fókuszálva, akkor visszaállítjuk a transition-t
         if (document.activeElement.tagName.toLowerCase() !== "input") {
             document.querySelector(".signup").style.transition = ".8s ease-in-out";
         }
     });
 });
+
+// Kattintás a bejelentkezés labelre, hogy visszaállítjuk a transition-t
+let loginLabel = document.querySelector(".login-label"); // Itt a .login-label az a gomb vagy címke, amit a bejelentkezéshez használsz
+
+loginLabel.addEventListener("click", function() {
+    // Ha a bejelentkezésre kattintunk, visszaállítjuk a transition-t
+    document.querySelector(".signup").style.transition = ".8s ease-in-out";
+});
+
 /*-------*/
 
 /* Clear Input Fields */
