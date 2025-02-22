@@ -33,13 +33,18 @@ let isKeyboardVisible = false;
 
 window.addEventListener("resize", function() {
     if (window.innerHeight < 600 && !isKeyboardVisible) {  
-        document.querySelector(".main").style.transform = "translateY(-100px)";
         document.querySelector(".main").classList.add("fixed");
+        document.querySelector(".main").style.transform = "translateY(-100px)";
         isKeyboardVisible = true;
     } else if (window.innerHeight >= 600 && isKeyboardVisible) {
         document.querySelector(".main").style.transform = "translateY(0)"; 
         document.querySelector(".main").classList.remove("fixed");
         isKeyboardVisible = false;
+    }
+    if (document.activeElement.tagName.toLowerCase() !== "input") {
+        document.querySelector(".signup").classList.add("no-animation");
+    } else {
+        document.querySelector(".signup").classList.remove("no-animation");
     }
 });
 /*-------*/
