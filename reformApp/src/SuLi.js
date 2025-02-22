@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!loginTab.checked) {
             loginTab.checked = true;
             signupTab.checked = false;
-
+            document.getElementById("privateOrCompany__div").style.display="block";
+            document.querySelector(".signup").querySelector("form").style.display="none";
             clearSignupFields()
         }
     });
@@ -19,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!signupTab.checked) {
             signupTab.checked = true;
             loginTab.checked = false;
-
+            document.getElementById("privateOrCompany__div").style.display="block";
+            document.querySelector(".signup").querySelector("form").style.display="none";
             clearLoginFields()
         }
     });
@@ -32,9 +34,11 @@ let isKeyboardVisible = false;
 window.addEventListener("resize", function() {
     if (window.innerHeight < 600 && !isKeyboardVisible) {  
         document.querySelector(".main").style.transform = "translateY(-100px)";
+        document.querySelector(".main").classList.add("fixed");
         isKeyboardVisible = true;
     } else if (window.innerHeight >= 600 && isKeyboardVisible) {
         document.querySelector(".main").style.transform = "translateY(0)"; 
+        document.querySelector(".main").classList.remove("fixed");
         isKeyboardVisible = false;
     }
 });
@@ -49,9 +53,18 @@ function clearSignupFields() {
     document.getElementById("SuTaxNumber").value = "";
     document.getElementById("SuPasswordAgain").value = "";
     document.getElementById('AdatKezelesCheck').checked = false;
+
     let eyeIcon = document.getElementById("signup_eyeIcon")
+    let passwordField = document.getElementById("SuPassword");
+    passwordField.type = "password";
     eyeIcon.classList.remove("fa-eye");
     eyeIcon.classList.add("fa-eye-slash");
+
+    let eyeIconAgain = document.getElementById("signup_eyeIcon_again");
+    let passwordFieldAgain = document.getElementById("SuPasswordAgain");
+    passwordFieldAgain.type = "password";
+    eyeIconAgain.classList.remove("fa-eye");
+    eyeIconAgain.classList.add("fa-eye-slash");
 }
 function clearLoginFields() {
     document.getElementById('LiEmail').value = "";
@@ -89,14 +102,14 @@ function togglePasswordVisibility(inputId, eyeId) {
 }
 /*-------*/
 
-/*Sign Up Start */
+ /* Open PopUp + Start SaveData */
 document.addEventListener("DOMContentLoaded", function () {
     const signupForm = document.querySelector(".signup form");
 
     signupForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        /*Open PopUp*/
+       
         let popup = document.getElementById("popup");
         popup.style.display = "flex";
         popup.style.transform = "translateY(-100%)";
@@ -104,11 +117,22 @@ document.addEventListener("DOMContentLoaded", function () {
             popup.style.transition = "transform 0.5s ease-out";
             popup.style.transform = "translateY(0)";
         }, 10);
-        /*----*/
 
         SignUpSaveData();
     });
 });
+/*----*/
+
+/*Close PopUp*/
+document.querySelector(".close-btn").addEventListener("click", function () {
+    let popup = document.getElementById("popup");
+    popup.style.transition = "transform 0.5s ease-in";
+    popup.style.transform = "translateY(-100%)";
+    setTimeout(() => { popup.style.display = "none"; }, 500);
+    document.getElementById("loginTab").checked = true;
+    document.getElementById("signupTab").checked = false;
+});
+/*-------*/
 
 /* Email/Password/TaxNumber Validity */
 document.getElementById("SuEmail").addEventListener("input", function () {
@@ -179,26 +203,60 @@ document.getElementById("SuPasswordAgain").addEventListener("input", function ()
         this.setCustomValidity("");
     }
 })
-
 /*-------*/
 
-/*Close PopUp*/
-document.querySelector(".close-btn").addEventListener("click", function () {
-    let popup = document.getElementById("popup");
-    popup.style.transition = "transform 0.5s ease-in";
-    popup.style.transform = "translateY(-100%)";
-    setTimeout(() => { popup.style.display = "none"; }, 500);
-    document.getElementById("loginTab").checked = true;
-    document.getElementById("signupTab").checked = false;
-});
-/*-------*/
+/* Company or private */
+document.getElementById("privatePerson").addEventListener("click", function(){
+    this.classList.add("active");
+    document.getElementById("company").classList.remove("active"); 
 
+    document.getElementById("privateOrCompany__div").style.display="none";
+    document.querySelector(".signup").querySelector("form").style.display="block";
+
+    let TaxNumber = document.querySelector(".signup #SuTaxNumber");
+    TaxNumber.style.display="none";
+    TaxNumber.removeAttribute("required");
+
+    let CompanyName =  document.querySelector(".signup #SuCompanyName");
+    CompanyName.style.display="none";
+    CompanyName.removeAttribute("required");
+})
+
+document.getElementById("company").addEventListener("click", function(){
+    this.classList.add("active");
+    document.getElementById("privatePerson").classList.remove("active");
+
+    document.getElementById("privateOrCompany__div").style.display="none";
+    document.querySelector(".signup").querySelector("form").style.display="block";
+
+    let TaxNumber = document.querySelector(".signup #SuTaxNumber");
+    TaxNumber.style.display="block";
+    TaxNumber.setAttribute("required", "true");
+
+    let CompanyName =  document.querySelector(".signup #SuCompanyName");
+    CompanyName.style.display="block";
+    CompanyName.setAttribute("required", "true"); 
+})
+/*------------*/
+
+/*  SignUp Save */
 function SignUpSaveData() {
-    let SignupName = document.getElementById('SuName').value;
-    let SignupEmail = document.getElementById('SuEmail').value;
-    let SignupPassword = document.getElementById('SuPassword').value;
-    let SignUpCompanyName =  document.getElementById("SuCompanyName").value;
-    let SignUpTaxNumber = document.getElementById("SuTaxNumber").value;
+    let currentRegist = document.getElementById("privateOrCompany__div").querySelector(".active");
+    if(currentRegist.innerHTML == "Vállakozóként")
+    {
+        let SignupName = document.getElementById('SuName').value;
+        let SignupEmail = document.getElementById('SuEmail').value;
+        let SignupPassword = document.getElementById('SuPassword').value;
+        let SignUpCompanyName =  document.getElementById("SuCompanyName").value;
+        let SignUpTaxNumber = document.getElementById("SuTaxNumber").value;
+    }
+    else
+    {
+        let SignupName = document.getElementById('SuName').value;
+        let SignupEmail = document.getElementById('SuEmail').value;
+        let SignupPassword = document.getElementById('SuPassword').value;
+    }
+    
     let DataIsSaved = false;
 
     DataIsSaved=true;
@@ -207,10 +265,11 @@ function SignUpSaveData() {
         clearSignupFields() 
     }
 }
-/*Sign Up End*/
+/*------------*/
 
 /*Login Start*/
 document.getElementById("LiButton").addEventListener("click", LoginToApp)
 function LoginToApp() {
 
 }
+/*-----------*/
