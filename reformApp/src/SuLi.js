@@ -39,12 +39,22 @@ window.addEventListener("resize", function() {
         document.querySelector(".main").style.transform = "translateY(0)"; 
         isKeyboardVisible = false;
     }
-    if (document.activeElement.tagName.toLowerCase() !== "input") {
-        document.querySelector(".signup").style.transform = "translateY(0)";
-        document.querySelector(".signup").style.transition = "none";
-    } else if(document.activeElement.tagName.toLowerCase() == "input") {
-        document.querySelector(".signup").style.transition = ".8s ease-in-out";
-    }
+});
+let inputFields = document.querySelectorAll("input");
+
+inputFields.forEach(input => {
+    input.addEventListener("focus", function() {
+        document.querySelector(".signup").style.transition = ".8s ease-in-out"; // Transition on focus
+    });
+
+    input.addEventListener("blur", function() {
+        document.querySelector(".signup").style.transition = "none"; // Remove transition on blur
+
+        // Ensure the transition is restored if input is blurred and not focused
+        if (document.activeElement.tagName.toLowerCase() !== "input") {
+            document.querySelector(".signup").style.transition = ".8s ease-in-out";
+        }
+    });
 });
 /*-------*/
 
