@@ -40,9 +40,9 @@ window.addEventListener("resize", function() {
         isKeyboardVisible = false;
     }
     if (document.activeElement.tagName.toLowerCase() !== "input") {
-        
+        document.querySelector(".signup").style.transform = "translateY(0)";
         document.querySelector(".signup").style.transition = "none";
-    } else {
+    } else if(document.activeElement.tagName.toLowerCase() == "input") {
         document.querySelector(".signup").style.transition = ".8s ease-in-out";
     }
 });
