@@ -47,6 +47,7 @@ function clearSignupFields() {
     document.getElementById('SuPassword').value = "";
     document.getElementById("SuCompanyName").value = "";
     document.getElementById("SuTaxNumber").value = "";
+    document.getElementById("SuPasswordAgain").value = "";
     document.getElementById('AdatKezelesCheck').checked = false;
     let eyeIcon = document.getElementById("signup_eyeIcon")
     eyeIcon.classList.remove("fa-eye");
@@ -67,6 +68,9 @@ document.getElementById("login_eyeIcon").addEventListener("click", function () {
 });
 document.getElementById("signup_eyeIcon").addEventListener("click", function () {
     togglePasswordVisibility("SuPassword", "signup_eyeIcon");
+});
+document.getElementById("signup_eyeIcon_again").addEventListener("click", function () {
+    togglePasswordVisibility("SuPasswordAgain", "signup_eyeIcon_again");
 });
 
 function togglePasswordVisibility(inputId, eyeId) {
@@ -144,15 +148,37 @@ document.getElementById("LiPassword").addEventListener("input", function () {
     }
 });
 document.getElementById("SuTaxNumber").addEventListener("input", function () {
-const vatInput = document.getElementById("SuTaxNumber");
-const vatRegex = /^[A-Z]{2}\d{8,12}$/;
-
-if (vatRegex.test(vatInput.value)) {
-    this.setCustomValidity("");
-} else {
-    this.setCustomValidity("Hibás formátum! Az adószámnak két betűs országkóddal kell kezdődnie, utána 8-12 számjegy következik.");
-}
+    let vatInput = this.value.replace(/\D/g, "");
+    
+    if (vatInput.length > 8) {
+        vatInput = vatInput.substring(0, 8) + "-" + vatInput.substring(8);
+    }
+    if (vatInput.length > 10) {
+        vatInput = vatInput.substring(0, 10) + "-" + vatInput.substring(10);
+    }
+    
+    this.value = vatInput;
+    
+    const vatRegex = /^\d{8}-\d-\d{2}$/;
+    if (vatRegex.test(vatInput)) {
+        this.setCustomValidity("");
+    } else {
+        this.setCustomValidity("Hibás formátum! Az adószámnak az alábbi formátumban kell lennie: 12345678-9-10");
+    }
+});
+document.getElementById("SuPasswordAgain").addEventListener("input", function () {
+    let password = document.getElementById("SuPassword").value;
+    let passwordAgain = document.getElementById("SuPasswordAgain").value
+    if(password!=passwordAgain)
+    {
+        this.setCustomValidity("A két jelszó nem egyezik meg!");
+    }
+    else
+    {
+        this.setCustomValidity("");
+    }
 })
+
 /*-------*/
 
 /*Close PopUp*/

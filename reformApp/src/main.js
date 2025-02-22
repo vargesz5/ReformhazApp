@@ -69,8 +69,36 @@ const scrollActive = () => {
 }
 
 window.addEventListener('scroll', scrollActive)
-// Alapértelmezett bezárás
 
+/* DropDown Menus(Divs) */
+document.querySelectorAll(".skills__data").forEach(item => {
+    item.addEventListener("click", function() {
+        let description = this.querySelector(".skills__description");
+        let allDescriptions = document.querySelectorAll(".skills__description");
+        let arrow = this.querySelector(".skills__arrow");
+
+        allDescriptions.forEach(desc => {
+            if (desc !== description) {
+                desc.classList.remove("active");
+                let arrowToReset = desc.closest(".skills__data").querySelector(".skills__arrow");
+                if (arrowToReset) {
+                    arrowToReset.style.transform = "rotate(0deg)";
+                }
+            }
+        });
+        
+        description.classList.toggle("active");
+
+        if (description.classList.contains("active")) {
+            arrow.style.transform = "rotate(180deg)"; 
+        } else {
+            arrow.style.transform = "rotate(0deg)";
+        }
+    });
+});
+
+
+/*----------*/
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 
