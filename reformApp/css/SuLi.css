@@ -154,10 +154,6 @@ img {
 	transform: translateY(-160px);
 	transition: .8s ease-in-out;
 }
-.signup.no-animation {
-	transform: translateY(0); 
-	transition: none;
-  }
   
 .signup label {
 	color: white;

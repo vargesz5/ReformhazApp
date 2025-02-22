@@ -28,35 +28,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 /*-------*/
 
-/* Keyboard comeUp => all inputfields be visible + no transition */
+/* Keyboard comeUp => all inputfields be visible */
 let isKeyboardVisible = false;
 
 window.addEventListener("resize", function() {
     if (window.innerHeight < 600 && !isKeyboardVisible) {  
         document.querySelector(".main").style.transform = "translateY(-100px)";
-        document.querySelector(".main").style.transition = "transform 0.5s ease-out";
         isKeyboardVisible = true;
     } else if (window.innerHeight >= 600 && isKeyboardVisible) {
         document.querySelector(".main").style.transform = "translateY(0)"; 
-        document.querySelector(".main").style.transition = "transform 0.5s ease-out";
         isKeyboardVisible = false;
     }
-});
-
-let inputFields = document.querySelectorAll("input");
-
-inputFields.forEach(input => {
-    input.addEventListener("focus", function() {
-        document.querySelector(".main").style.transition = "transform 0.5s ease-out";
-    });
-
-    input.addEventListener("blur", function() {
-        document.querySelector(".main").style.transition = "none";
-
-        if (window.innerHeight >= 600) {
-            document.querySelector(".main").style.transform = "translateY(0)"; 
-        }
-    });
+    if (document.activeElement.tagName.toLowerCase() !== "input") {
+        
+        document.querySelector(".signup").style.transition = "none";
+    } else {
+        document.querySelector(".signup").style.transition = ".8s ease-in-out";
+    }
 });
 /*-------*/
 
