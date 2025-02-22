@@ -148,6 +148,7 @@ document.getElementById("LiPassword").addEventListener("input", function () {
     }
 });
 document.getElementById("SuTaxNumber").addEventListener("input", function () {
+
     let vatInput = this.value.replace(/\D/g, "");
     
     if (vatInput.length > 8) {
