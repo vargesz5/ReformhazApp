@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!loginTab.checked) {
             loginTab.checked = true;
             signupTab.checked = false;
-            document.getElementById("privateOrCompany__div").style.display="block";
-            document.querySelector(".signup").querySelector("form").style.display="none";
+            document.getElementById("privateOrCompany__div").style.display = "block";
+            document.querySelector(".signup").querySelector("form").style.display = "none";
             clearSignupFields()
         }
     });
@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!signupTab.checked) {
             signupTab.checked = true;
             loginTab.checked = false;
-            document.getElementById("privateOrCompany__div").style.display="block";
-            document.querySelector(".signup").querySelector("form").style.display="none";
+            document.getElementById("privateOrCompany__div").style.display = "block";
+            document.querySelector(".signup").querySelector("form").style.display = "none";
             clearLoginFields()
         }
     });
@@ -39,12 +39,21 @@ window.addEventListener("resize", function() {
         document.querySelector(".main").style.transform = "translateY(0)"; 
         isKeyboardVisible = false;
     }
+
+    let signupElement = document.querySelector(".signup");
+
     if (document.activeElement.tagName.toLowerCase() !== "input") {
-        document.querySelector(".signup").style.transition = "none";
-    } else if(document.activeElement.tagName.toLowerCase() == "input") {
-        document.querySelector(".signup").style.transition = ".8s ease-in-out";
+        signupElement.style.transition = "none";
+
+        // Kis késleltetéssel visszaállítjuk az eredeti transition-t
+        setTimeout(() => {
+            signupElement.style.transition = ".8s ease-in-out";
+        }, 10); 
+    } else {
+        signupElement.style.transition = ".8s ease-in-out";
     }
 });
+
 /*-------*/
 
 /* Clear Input Fields */
@@ -105,14 +114,14 @@ function togglePasswordVisibility(inputId, eyeId) {
 }
 /*-------*/
 
- /* Open PopUp + Start SaveData */
+/* Open PopUp + Start SaveData */
 document.addEventListener("DOMContentLoaded", function () {
     const signupForm = document.querySelector(".signup form");
 
     signupForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-       
+
         let popup = document.getElementById("popup");
         popup.style.display = "flex";
         popup.style.transform = "translateY(-100%)";
@@ -177,16 +186,16 @@ document.getElementById("LiPassword").addEventListener("input", function () {
 document.getElementById("SuTaxNumber").addEventListener("input", function () {
 
     let vatInput = this.value.replace(/\D/g, "");
-    
+
     if (vatInput.length > 8) {
         vatInput = vatInput.substring(0, 8) + "-" + vatInput.substring(8);
     }
     if (vatInput.length > 10) {
         vatInput = vatInput.substring(0, 10) + "-" + vatInput.substring(10);
     }
-    
+
     this.value = vatInput;
-    
+
     const vatRegex = /^\d{8}-\d-\d{2}$/;
     if (vatRegex.test(vatInput)) {
         this.setCustomValidity("");
@@ -197,75 +206,70 @@ document.getElementById("SuTaxNumber").addEventListener("input", function () {
 document.getElementById("SuPasswordAgain").addEventListener("input", function () {
     let password = document.getElementById("SuPassword").value;
     let passwordAgain = document.getElementById("SuPasswordAgain").value
-    if(password!=passwordAgain)
-    {
+    if (password != passwordAgain) {
         this.setCustomValidity("A két jelszó nem egyezik meg!");
     }
-    else
-    {
+    else {
         this.setCustomValidity("");
     }
 })
 /*-------*/
 
 /* Company or private */
-document.getElementById("privatePerson").addEventListener("click", function(){
+document.getElementById("privatePerson").addEventListener("click", function () {
     this.classList.add("active");
-    document.getElementById("company").classList.remove("active"); 
+    document.getElementById("company").classList.remove("active");
 
-    document.getElementById("privateOrCompany__div").style.display="none";
-    document.querySelector(".signup").querySelector("form").style.display="block";
+    document.getElementById("privateOrCompany__div").style.display = "none";
+    document.querySelector(".signup").querySelector("form").style.display = "block";
 
     let TaxNumber = document.querySelector(".signup #SuTaxNumber");
-    TaxNumber.style.display="none";
+    TaxNumber.style.display = "none";
     TaxNumber.removeAttribute("required");
 
-    let CompanyName =  document.querySelector(".signup #SuCompanyName");
-    CompanyName.style.display="none";
+    let CompanyName = document.querySelector(".signup #SuCompanyName");
+    CompanyName.style.display = "none";
     CompanyName.removeAttribute("required");
 })
 
-document.getElementById("company").addEventListener("click", function(){
+document.getElementById("company").addEventListener("click", function () {
     this.classList.add("active");
     document.getElementById("privatePerson").classList.remove("active");
 
-    document.getElementById("privateOrCompany__div").style.display="none";
-    document.querySelector(".signup").querySelector("form").style.display="block";
+    document.getElementById("privateOrCompany__div").style.display = "none";
+    document.querySelector(".signup").querySelector("form").style.display = "block";
 
     let TaxNumber = document.querySelector(".signup #SuTaxNumber");
-    TaxNumber.style.display="block";
+    TaxNumber.style.display = "block";
     TaxNumber.setAttribute("required", "true");
 
-    let CompanyName =  document.querySelector(".signup #SuCompanyName");
-    CompanyName.style.display="block";
-    CompanyName.setAttribute("required", "true"); 
+    let CompanyName = document.querySelector(".signup #SuCompanyName");
+    CompanyName.style.display = "block";
+    CompanyName.setAttribute("required", "true");
 })
 /*------------*/
 
 /*  SignUp Save */
 function SignUpSaveData() {
     let currentRegist = document.getElementById("privateOrCompany__div").querySelector(".active");
-    if(currentRegist.innerHTML == "Vállakozóként")
-    {
+    if (currentRegist.innerHTML == "Vállakozóként") {
         let SignupName = document.getElementById('SuName').value;
         let SignupEmail = document.getElementById('SuEmail').value;
         let SignupPassword = document.getElementById('SuPassword').value;
-        let SignUpCompanyName =  document.getElementById("SuCompanyName").value;
+        let SignUpCompanyName = document.getElementById("SuCompanyName").value;
         let SignUpTaxNumber = document.getElementById("SuTaxNumber").value;
     }
-    else
-    {
+    else {
         let SignupName = document.getElementById('SuName').value;
         let SignupEmail = document.getElementById('SuEmail').value;
         let SignupPassword = document.getElementById('SuPassword').value;
     }
-    
+
     let DataIsSaved = false;
 
-    DataIsSaved=true;
-    if(DataIsSaved==true)
-    {
-        clearSignupFields() 
+    DataIsSaved = true;
+    if (DataIsSaved == true) {
+        clearSignupFields()
     }
 }
 /*------------*/
