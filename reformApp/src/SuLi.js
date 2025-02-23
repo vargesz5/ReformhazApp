@@ -47,7 +47,7 @@ window.addEventListener("resize", function() {
 
         setTimeout(() => {
             signupElement.style.transition = ".8s ease-in-out";
-        }, 10); 
+        }, 20); 
     } else {
         signupElement.style.transition = ".8s ease-in-out";
     }

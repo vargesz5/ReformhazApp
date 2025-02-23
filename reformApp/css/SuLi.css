@@ -158,7 +158,7 @@ img {
 /*Sign Up*/
 .signup {
 	height: 800px;
-    min-height: 500px;
+    min-height: auto;
 	background: #8db600;
 	border-radius: 60% / 10%;
 	transform: translateY(-160px);
