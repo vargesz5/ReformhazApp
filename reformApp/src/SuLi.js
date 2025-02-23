@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 /*-------*/
 
-/* Keyboard comeUp => all inputfields be visible */
+/* Keyboard comeUp + remove transition */
 let isKeyboardVisible = false;
 
 window.addEventListener("resize", function() {
@@ -45,7 +45,6 @@ window.addEventListener("resize", function() {
     if (document.activeElement.tagName.toLowerCase() !== "input") {
         signupElement.style.transition = "none";
 
-        // Kis késleltetéssel visszaállítjuk az eredeti transition-t
         setTimeout(() => {
             signupElement.style.transition = ".8s ease-in-out";
         }, 10); 
@@ -114,7 +113,7 @@ function togglePasswordVisibility(inputId, eyeId) {
 }
 /*-------*/
 
-/* Open PopUp + Start SaveData */
+/* Open PopUp  */
 document.addEventListener("DOMContentLoaded", function () {
     const signupForm = document.querySelector(".signup form");
 
@@ -248,6 +247,11 @@ document.getElementById("company").addEventListener("click", function () {
     CompanyName.setAttribute("required", "true");
 })
 /*------------*/
+/* Back to Company or Private */
+document.getElementById("backToChoose").addEventListener("click", function(){
+    document.querySelector(".signup").querySelector("form").style.display="none";
+    document.getElementById("privateOrCompany__div").style.display="block";
+})
 
 /*  SignUp Save */
 function SignUpSaveData() {
