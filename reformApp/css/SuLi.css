@@ -168,7 +168,7 @@ img {
 .signup label {
 	color: white;
 	transform: scale(.6);
-	margin: 50px;
+	margin: 50px 50px 30px 50px;
 	padding-top: 15px;
 }
 
