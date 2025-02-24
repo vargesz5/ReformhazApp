@@ -267,7 +267,7 @@ img {
     font-size: 1.5rem;
     margin-left: var(--mb-2);
     transition: transform 0.3s ease-in-out;
-    color: #8db600;
+    color: var(--first-color);
 }
 .skills__icon {
     font-size: 2rem;
