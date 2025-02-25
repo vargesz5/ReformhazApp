@@ -113,6 +113,17 @@ img {
 	color: #8db600 ;
 	margin-top: 5px;
 }
+#backToHome
+{
+	width: 15%;
+	background-color: #6c6c6c;
+	color: white ;
+	margin-top: 15px;
+}
+#backToHome:hover
+{
+	background-color: #8db600;
+}
 #backToChoose:hover
 {
 	transform: scale(1.1);

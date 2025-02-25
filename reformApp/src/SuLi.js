@@ -252,6 +252,9 @@ document.getElementById("backToChoose").addEventListener("click", function(){
     document.querySelector(".signup").querySelector("form").style.display="none";
     document.getElementById("privateOrCompany__div").style.display="block";
 })
+document.getElementById("backToHome").addEventListener("click", function(){
+    location.href='index.html';
+})
 
 /*  SignUp Save */
 function SignUpSaveData() {
