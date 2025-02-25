@@ -1,3 +1,15 @@
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/src/service-worker.js')
+        .then(registration => {
+            console.log('Service Worker regisztrálva:', registration);
+        })
+        .catch(error => {
+            console.log('Service Worker regisztrálása nem sikerült:', error);
+        });
+    });
+}
+
 /*===== MENU SHOW =====*/
 
 const showMenu = (toggleId, navId) => {
